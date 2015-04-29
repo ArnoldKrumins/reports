@@ -1,0 +1,27 @@
+{
+  "name": "reports",
+  "version": "0.0.0",
+  "authors": [
+    "Arnold Krumins <arnold.krumins@gmail.com>"
+  ],
+  "description": "POC for reports",
+  "main": "index.html",
+  "keywords": [
+    "Reports"
+  ],
+  "license": "MIT",
+  "homepage": "arnoldkrumins.azurewebsites.net",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.15",
+    "gsap": "~1.16.1",
+    "fontawesome": "~4.3.0"
+  }
+}
