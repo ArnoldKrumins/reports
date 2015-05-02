@@ -6,7 +6,7 @@ app.directive('item',function(){
     return{
         restrict:'A',
         scope:{},
-        link:function(scope,element,attrs){
+        link:function(scope,element,__){
 
             element.bind('click',function(){
                 element.find('i').toggleClass("fa-circle-o fa-dot-circle-o");

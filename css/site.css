@@ -1,5 +1,6 @@
 .main {
   color: #8b8686;
+  margin-left: -35px;
 }
 .main ul li {
   display: inline-block;
