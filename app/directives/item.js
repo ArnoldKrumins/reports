@@ -9,7 +9,8 @@ app.directive('item',function(){
         link:function(scope,element,attrs){
 
             element.bind('click',function(){
-                element.find('i').toggleClass("fa-circle-o fa-dot-circle-o")
+                element.find('i').toggleClass("fa-circle-o fa-dot-circle-o");
+                TweenMax.to(element, 0.1, {scaleX:0.95, scaleY:0.95, force3D:true, yoyo:true, repeat:1, ease:Power1.easeInOut});
 
             });
 
