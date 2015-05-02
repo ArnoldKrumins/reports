@@ -11,7 +11,7 @@ app.directive('components',function(){
           '<li ng-repeat="item in items" item >' +
              '<div>' +
                '<i class="fa fa-circle-o"></i>' +
-               '<h5> {{ item.name }} </h5>' +
+               '<h5><i class="fa fa-newspaper-o"></i> {{ item.name }} </h5>' +
              '</div>' +
            '</li>' +
           '</ul>',

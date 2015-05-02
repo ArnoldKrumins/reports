@@ -1,3 +1,7 @@
+@color-text-components: rgb(139, 134, 134);
+@color-text-properties: #f5f5f5;
+@color-background-properties: #245580;
+
 .background()
 {
   background: rgb(238,238,238); /* Old browsers */
@@ -38,6 +42,7 @@
 
 
 .main{
+  color:@color-text-components;
   ul{
      li{
        display: inline-block;
@@ -57,7 +62,14 @@
               right: 2px;
               font-size: 25px;
               top: 2px;
-              color: lightgrey;
+            }
+            h5{
+              position: relative;
+              top: -22px;
+              i{
+                position: relative;
+                top:5px;
+              }
             }
         }
      }
@@ -67,13 +79,13 @@
 
 .properties{
   position: relative;
-  color:#f5f5f5;
+  color:@color-text-properties;
   margin: 10px;
   padding: 10px;
   .border-radius(5px,5px,5px,5px);
   .shadow;
   .opacity(.8);
-  background-color: #245580;
+  background-color: @color-background-properties;
 
   i{
     font-size: 20px;

@@ -1,3 +1,6 @@
+.main {
+  color: #8b8686;
+}
 .main ul li {
   display: inline-block;
   padding: 10px;
@@ -37,7 +40,14 @@
   right: 2px;
   font-size: 25px;
   top: 2px;
-  color: lightgrey;
+}
+.main ul li div h5 {
+  position: relative;
+  top: -22px;
+}
+.main ul li div h5 i {
+  position: relative;
+  top: 5px;
 }
 .properties {
   position: relative;

@@ -6,7 +6,7 @@ app.directive('properties',function(){
     return{
         restrict:'EA',
         replace:true,
-        scope:{},
+        scope:{ items:'='},
         template:'<div class="properties">' +
                     '<h5><i class="fa fa-cogs"></i>Properties</h5>' +
                  '<form class="form-horizontal">' +
