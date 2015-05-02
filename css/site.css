@@ -20,7 +20,7 @@ body {
 }
 .main {
   color: #8b8686;
-  margin-left: -30px;
+  margin-left: -28px;
 }
 .main ul li {
   display: inline-block;
@@ -104,8 +104,14 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#45484d', endColorstr='#000000', GradientType=0);
   /* IE6-8 */
 }
-.properties i {
-  font-size: 20px;
+.properties h5 {
+  position: relative;
+  top: -13px;
+}
+.properties h5 i {
+  position: relative;
+  top: 3px;
+  font-size: 25px;
   padding-right: 5px;
 }
 .properties .control-label {
