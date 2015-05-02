@@ -1,5 +1,6 @@
 .main {
   color: #8b8686;
+  margin-left: -45px;
 }
 .main ul li {
   display: inline-block;
@@ -50,7 +51,8 @@
   top: 5px;
 }
 .properties {
-  position: relative;
+  position: fixed;
+  right: 0;
   color: #f5f5f5;
   margin: 10px;
   padding: 10px;
