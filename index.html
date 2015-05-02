@@ -11,16 +11,30 @@
 
     <title></title>
 </head>
-<body>
+<body ng-app="reports">
 
-<div class="container-fluid">
+<div ng-controller="ReportController" ng-init="init()" class="container-fluid">
+    <div class="row">
+        <div class="main col-sm-8 col-md-8 col-lg-8">
+            <components items="data"></components>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <properties></properties>
 
-
+        </div>
+    </div>
 </div>
 
 </body>
 
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/gsap/src/minified/TimelineMax.min.js"></script>
+
+<script src="app/reports.js" ></script>
+<script src="app/services/fakeDataService.js"></script>
+<script src="app/controllers/ReportController.js"></script>
+<script src="app/directives/components.js"></script>
+<script src="app/directives/properties.js"></script>
+<script src="app/directives/item.js"></script>
 
 </html>
