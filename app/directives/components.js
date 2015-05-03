@@ -9,9 +9,13 @@ app.directive('components',function(){
       scope:{ items:'='},
       template:'<ul>' +
           '<li ng-repeat="item in items" item="item" >' +
-             '<div>' +
+             '<div class="advertiser">' +
                '<i class="fa fa-circle-o"></i>' +
                '<h5><i class="fa fa-newspaper-o"></i> {{ item.name }} </h5>' +
+//                    '<div class="stats">' +
+//                        '<h5><i class="fa fa-bar-chart"></i>Setting One  <span>{{ item.settingone }}%</span></h5>'+
+//                        '<h5><i class="fa fa-bar-chart"></i>Setting Two  <span>{{ item.settingtwo }}%</span></h5>'+
+//                    '</div>' +
              '</div>' +
            '</li>' +
           '</ul>',
