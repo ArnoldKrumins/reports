@@ -16,10 +16,10 @@
 <div ng-controller="ReportController" ng-init="init()" class="container-fluid">
     <div class="row">
         <div class="main col-sm-8 col-md-8 col-lg-8">
-            <components items="data"></components>
+            <div components items="data"></div>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
-            <properties></properties>
+            <div properties="selecteditems" names="selectednames" selected="selected"></div>
 
         </div>
     </div>
@@ -28,7 +28,9 @@
 </body>
 
 <script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 <script src="bower_components/gsap/src/minified/TweenMax.min.js"></script>
+<script src="bower_components/lodash/lodash.min.js"></script>
 
 <script src="app/reports.js" ></script>
 <script src="app/services/fakeDataService.js"></script>

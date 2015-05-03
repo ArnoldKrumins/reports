@@ -64,14 +64,14 @@ body {
 }
 .main ul li div h5 {
   position: relative;
-  top: -22px;
+  top: -12px;
 }
 .main ul li div h5 i {
   position: relative;
   top: 5px;
 }
 .properties {
-  position: fixed;
+  position: relative;
   right: 0;
   color: #f5f5f5;
   margin: 10px;
@@ -82,9 +82,9 @@ body {
   -webkit-box-shadow: 5px 5px 18px -3px #5f5d5d;
   -moz-box-shadow: 5px 5px 18px -3px #5f5d5d;
   box-shadow: 5px 5px 18px -3px #5f5d5d;
-  -webkit-opacity: 0.8;
-  -moz-opacity: 0.8;
-  opacity: 0.8;
+  -webkit-opacity: 0.9;
+  -moz-opacity: 0.9;
+  opacity: 0.9;
   background: #45484d;
   /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -114,7 +114,20 @@ body {
   font-size: 25px;
   padding-right: 5px;
 }
+.properties .badge {
+  padding: 5px;
+  margin: 5px;
+  background-color: #31636C;
+  -webkit-box-shadow: 10px 10px 18px -2px #000000;
+  -moz-box-shadow: 10px 10px 18px -2px #000000;
+  box-shadow: 10px 10px 18px -2px #000000;
+  color: #f5f5f5;
+  border: #f5f5f5 solid 2px;
+}
 .properties .control-label {
   text-align: left!important;
   padding-left: 30px;
+}
+.btn-success {
+  margin-right: 15px;
 }

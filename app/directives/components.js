@@ -8,7 +8,7 @@ app.directive('components',function(){
        replace:false,
       scope:{ items:'='},
       template:'<ul>' +
-          '<li ng-repeat="item in items" item >' +
+          '<li ng-repeat="item in items" item="item" >' +
              '<div>' +
                '<i class="fa fa-circle-o"></i>' +
                '<h5><i class="fa fa-newspaper-o"></i> {{ item.name }} </h5>' +
@@ -16,9 +16,6 @@ app.directive('components',function(){
            '</li>' +
           '</ul>',
       link: function(scope,element, attrs){
-
-
-
 
       }
    }
