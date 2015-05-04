@@ -10,7 +10,7 @@ app.directive('components',function(){
       template:'<ul>' +
           '<li ng-repeat="item in items" item="item" >' +
              '<div class="advertiser">' +
-               '<i class="fa fa-circle-o"></i>' +
+               '<i id="check" class="fa fa-circle-o"></i>' +
                '<h5><i class="fa fa-newspaper-o"></i> {{ item.name }} </h5>' +
 //                    '<div class="stats">' +
 //                        '<h5><i class="fa fa-bar-chart"></i>Setting One  <span>{{ item.settingone }}%</span></h5>'+

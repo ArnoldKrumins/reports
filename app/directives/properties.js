@@ -13,29 +13,35 @@ app.directive('properties',['$sce', function($sce){
                  '<form class="form-horizontal">' +
 
                     '<div class="form-group">' +
-                        '<label for="input-one" class="col-sm-8 col-md-9 control-label">Setting One</label>'+
+                        '<label for="input-one" class="col-sm-8 col-md-9 control-label">No User Matching Threshold </label>'+
                         '<div class="col-sm-4 col-md-3">' +
                             '<input type="text" ng-model="selected.settingone" class="form-control pull-right" id="input-one" placeholder="%">' +
                         '</div>' +
                     '</div>' +
                     '<div class="form-group">' +
-                        '<label for="input-two" class="col-sm-8 col-md-9 control-label">Setting Two</label>' +
+                        '<label for="input-two" class="col-sm-8 col-md-9 control-label">User Matching</label>' +
                         '<div class="col-sm-4 col-md-3">' +
                             '<input type="text" ng-model="selected.settingtwo" class="form-control" id="input-two" placeholder="%">' +
                          '</div>' +
                     '</div>' +
 
                     '<div class="form-group">' +
-                        '<label for="input-three" class="col-sm-8 col-md-9 control-label">Setting Three</label>' +
-                    '       <div class="col-sm-4 col-md-3">' +
-                                '<input type="text" ng-model="selected.settingthree" class="form-control" id="input-three" placeholder="%">' +
-                            '</div>' +
+                        '<label for="input-three" class="col-sm-6 col-md-6 col-lg-8 control-label">Auction Type</label>' +
+                    '       <div class="col-sm-6 col-md-6 col-lg-4">' +
+                                 '<select class="form-control">' +
+                                    '<option>English Anction</option>' +
+                                    '<option>Second Highest Bid</option>' +
+                                 '</select>' +
+                           '</div>' +
                     '</div>' +
 
                     '<div class="form-group">' +
-                        '<label for="input-four" class="col-sm-8 col-md-9 control-label">Setting Four</label>' +
-                        '<div class="col-sm-4 col-md-3">' +
-                            '<input type="text" ng-model="selected.settingfour" class="form-control" id="input-four" placeholder="%">' +
+                        '<label for="input-four" class="col-sm-6 col-md-6 col-lg-8 control-label">Geofilter</label>' +
+                        '<div class="col-sm-6 col-md-6 col-lg-4">' +
+                            '<select class="form-control">' +
+                                '<option value="126">Stockholm</option>' +
+                                '<option value="181">Söder</option>' +
+                            '</select>' +
                         '</div>' +
                     '</div>' +
                     '<div class="form-group">' +
@@ -75,7 +81,7 @@ app.directive('properties',['$sce', function($sce){
 
 
                     scope.names  = _.reduce(_.map(scope.selecteditems, 'name'), function(result,name,key) {
-                            result[key] = "<span id=\'advertisers\' class=\'badge\'>" + name + '</span>';
+                            result[key] = "<span id=\'advertisers\' class=\'badge\'>" + name + '<i class="fa fa-times"></i></span>';
                         return result;
                     }, []).join("");
 
