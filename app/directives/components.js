@@ -10,12 +10,14 @@ app.directive('components',function(){
       template:'<ul>' +
           '<li ng-repeat="item in items" item="item" >' +
              '<div class="advertiser">' +
-               '<i id="check" class="fa fa-circle-o"></i>' +
+               '<i id="selected-item" class="fa fa-circle-o"></i>' +
                '<h5><i class="fa fa-newspaper-o"></i> {{ item.name }} </h5>' +
-//                    '<div class="stats">' +
-//                        '<h5><i class="fa fa-bar-chart"></i>Setting One  <span>{{ item.settingone }}%</span></h5>'+
-//                        '<h5><i class="fa fa-bar-chart"></i>Setting Two  <span>{{ item.settingtwo }}%</span></h5>'+
-//                    '</div>' +
+                    '<div class="stats">' +
+                        '<h6><i class="fa fa-line-chart"></i>No User Matching Threshold <span>{{ item.settingtwo }}%</span></h6>'+
+                        '<h6><i class="fa fa-line-chart"></i>User Matching  <span>{{ item.settingtwo }}%</span></h6>'+
+                        '<h6><i class="fa fa-exchange"></i>Auction Type  <span>{{ item.settingtwo }}%</span></h6>'+
+                        '<h6><i class="fa fa-globe"></i>Geofilter  <span>{{ item.settingtwo }}%</span></h6>'+
+                    '</div>' +
              '</div>' +
            '</li>' +
           '</ul>',

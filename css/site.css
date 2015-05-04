@@ -26,6 +26,13 @@ body {
   display: inline-block;
   padding: 10px;
 }
+.main ul li h5 {
+  position: relative;
+  top: -13px;
+  left: -2px;
+  font-size: 16px;
+  font-weight: bold;
+}
 .main ul li div.advertiser {
   position: relative;
   background: #eeeeee;
@@ -58,22 +65,30 @@ body {
 }
 .main ul li div.advertiser div.stats {
   position: relative;
-  top: 20px;
-  left: 15px;
+  top: 10px;
+  left: 18px;
 }
-.main ul li div.advertiser i {
+.main ul li div.advertiser div.stats span {
+  font-size: 18px;
+  position: relative;
+  top: 1px;
+  color: #4c7489;
+}
+.main ul li div.advertiser i#selected-item {
   position: absolute;
   right: 2px;
   font-size: 25px;
   top: 2px;
 }
-.main ul li div.advertiser h5 {
+.main ul li div.advertiser h6 {
   position: relative;
   top: -12px;
 }
-.main ul li div.advertiser h5 i {
+.main ul li div.advertiser h6 i {
   position: relative;
-  top: 5px;
+  top: 2px;
+  font-size: 20px;
+  padding-right: 6px;
 }
 .properties {
   position: relative;
