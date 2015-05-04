@@ -81,7 +81,7 @@ app.directive('properties',['$sce', function($sce){
 
 
                     scope.names  = _.reduce(_.map(scope.selecteditems, 'name'), function(result,name,key) {
-                            result[key] = "<span id=\'advertisers\' class=\'badge\'>" + name + '<i class="fa fa-times"></i></span>';
+                            result[key] = "<span id=\'advertisers\' class=\'badge\'>" + name + '<a href="#" ng-click=""><i class="fa fa-times"></i></a></span>';
                         return result;
                     }, []).join("");
 
