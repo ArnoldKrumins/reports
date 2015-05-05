@@ -22,6 +22,26 @@ app.factory('fakeDataService',function(){
                   {name:'DoubleClick Bid Manager US', settingone:'54',settingtwo:'89',settingthree:'79',settingfour:'56'},
                   {name:'BidTheatre - Blind', settingone:'54',settingtwo:'89',settingthree:'79',settingfour:'56'}
               ];
+        },
+
+
+        getAdvertiserCategories: function(){
+
+            return [
+                {value:'0', name:'Adult'},
+                {value:'1', name:'Arts and Entertainment/Architecture'},
+                {value:'2', name:'Arts and Entertainment/Awards'},
+                {value:'3', name:'Arts and Entertainment/Celebrities and Entertainment News'},
+                {value:'4', name:'Arts and Entertainment/Animation and Comics'},
+                {value:'5', name:'Arts and Entertainment/Fashion and Modeling'},
+                {value:'6', name:'Arts and Entertainment/Humor'},
+                {value:'7', name:'Arts and Entertainment/Movies'},
+                {value:'8', name:'Arts and Entertainment/Music and Audio'},
+                {value:'9', name:'Arts and Entertainment/Performing Arts'},
+                {value:'10', name:'Arts and Entertainment/Photography'},
+
+            ]
+
         }
 
     }

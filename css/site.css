@@ -159,3 +159,23 @@ body {
 .btn-success {
   margin-right: 15px;
 }
+.advertiser-categories {
+  position: relative;
+}
+.advertiser-categories .categories {
+  left: -20px;
+  z-index: 99;
+}
+.advertiser-categories .categories-selected {
+  right: -30px;
+  top: -166px;
+  z-index: 99;
+}
+.advertiser-categories .category-buttons {
+  top: 40px;
+  left: -12px;
+  position: relative;
+}
+.advertiser-categories .category-buttons button {
+  width: 35px;
+}

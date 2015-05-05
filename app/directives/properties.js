@@ -6,49 +6,62 @@ app.directive('properties',['$sce', function($sce){
     return{
         restrict:'EA',
         replace:true,
-        scope:{ selecteditems:'=properties',names:'=',selected:'='},
+        scope:{ selecteditems:'=properties',names:'=',selected:'=',categories:'='},
         template:'<div class="properties">' +
-                    '<h5><i class="fa fa-cogs"></i>Properties</h5>' +
-                    '<h5 class="col-sm-8 col-md-9" id="explicitlyTrustedHtml" ng-bind-html="names"></h5>' +
-                 '<form class="form-horizontal">' +
+            '<h5><i class="fa fa-cogs"></i>Properties</h5>' +
+            '<h5 class="col-sm-8 col-md-9" id="explicitlyTrustedHtml" ng-bind-html="names"></h5>' +
+            '<form class="form-horizontal">' +
 
-                    '<div class="form-group">' +
-                        '<label for="input-one" class="col-sm-8 col-md-9 control-label">No User Matching Threshold </label>'+
-                        '<div class="col-sm-4 col-md-3">' +
-                            '<input type="text" ng-model="selected.settingone" class="form-control pull-right" id="input-one" placeholder="%">' +
-                        '</div>' +
-                    '</div>' +
-                    '<div class="form-group">' +
-                        '<label for="input-two" class="col-sm-8 col-md-9 control-label">User Matching</label>' +
-                        '<div class="col-sm-4 col-md-3">' +
-                            '<input type="text" ng-model="selected.settingtwo" class="form-control" id="input-two" placeholder="%">' +
-                         '</div>' +
-                    '</div>' +
+            '<div class="form-group">' +
+            '<label for="input-one" class="col-sm-8 col-md-9 control-label">No User Matching Threshold </label>'+
+            '<div class="col-sm-4 col-md-3">' +
+            '<input type="text" ng-model="selected.settingone" class="form-control pull-right" id="input-one" placeholder="%">' +
+            '</div>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<label for="input-two" class="col-sm-8 col-md-9 control-label">User Matching</label>' +
+            '<div class="col-sm-4 col-md-3">' +
+            '<input type="text" ng-model="selected.settingtwo" class="form-control" id="input-two" placeholder="%">' +
+            '</div>' +
+            '</div>' +
 
-                    '<div class="form-group">' +
-                        '<label for="input-three" class="col-sm-6 col-md-6 col-lg-8 control-label">Auction Type</label>' +
-                    '       <div class="col-sm-6 col-md-6 col-lg-4">' +
-                                 '<select class="form-control">' +
-                                    '<option>English Anction</option>' +
-                                    '<option>Second Highest Bid</option>' +
-                                 '</select>' +
-                           '</div>' +
-                    '</div>' +
+            '<div class="form-group">' +
+            '<label for="input-three" class="col-sm-6 col-md-6 col-lg-8 control-label">Auction Type</label>' +
+            '       <div class="col-sm-6 col-md-6 col-lg-4">' +
+            '<select class="form-control">' +
+            '<option>English Anction</option>' +
+            '<option>Second Highest Bid</option>' +
+            '</select>' +
+            '</div>' +
+            '</div>' +
 
-                    '<div class="form-group">' +
-                        '<label for="input-four" class="col-sm-6 col-md-6 col-lg-8 control-label">Geofilter</label>' +
-                        '<div class="col-sm-6 col-md-6 col-lg-4">' +
-                            '<select class="form-control">' +
-                                '<option value="126">Stockholm</option>' +
-                                '<option value="181">Söder</option>' +
-                            '</select>' +
-                        '</div>' +
-                    '</div>' +
-                    '<div class="form-group">' +
-                        '<button type="button" class="btn btn-success pull-right">Save</button>' +
-                    '</div>' +
-                 '</form>' +
-                 '</div>',
+            '<div class="form-group">' +
+            '<label for="input-four" class="col-sm-6 col-md-6 col-lg-8 control-label">Geofilter</label>' +
+            '<div class="col-sm-6 col-md-6 col-lg-4">' +
+            '<select class="form-control">' +
+            '<option value="126">Stockholm</option>' +
+            '<option value="181">Söder</option>' +
+            '</select>' +
+            '</div>' +
+            '</div>' +
+
+            '<div class="form-group">' +
+            '<label for="input-four" class="col-sm-6 col-md-6 col-lg-8 control-label">Site Protection</label>' +
+            '<div class="col-sm-6 col-md-6 col-lg-4">' +
+            '<select class="form-control">' +
+            '<option value="0">Default</option>' +
+            '<option value="1">Enabled</option>' +
+            '<option value="2">Disabled</option>' +
+            '</select>' +
+            '</div>' +
+            '</div>' +
+            '<div advertiser-categories="categories" ></div>' +
+            '<div class="form-group">' +
+            '<button type="button" class="btn btn-success pull-right">Save</button>' +
+            '</div>' +
+            '</form>' +
+            '</div>',
+
         link: function(scope,element,attrs){
 
             var self = this;

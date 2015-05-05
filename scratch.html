@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css"/>
+
+    <title>Scratch page</title>
+</head>
+<body>
+
+
+<div ng-controller="ReportController" ng-init="init()" class="container-fluid">
+    <div class="row">
+     <div class="col-sm-12 col-md-12 col-lg-12" style="margin-top: 100px">
+
+         <div class="col-md-5">
+             <select size="10" multiple class="form-control">
+             <option value="246">Adult</option>
+             <option value="3">Arts and Entertainment/Architecture</option>
+             <option value="4">Arts and Entertainment/Awards</option>
+             <option value="5">Arts and Entertainment/Celebrities and Entertainment News</option>
+             <option selected="selected" value="2">Arts and Entertainment/Animation and Comics</option><option value="6">Arts and Entertainment/Fashion and Modeling</option>
+             <option value="7">Arts and Entertainment/Humor</option>
+             <option value="8">Arts and Entertainment/Movies</option>
+             <option value="9">Arts and Entertainment/Music and Audio</option>
+             <option value="10">Arts and Entertainment/Performing Arts</option>
+             <option value="11">Arts and Entertainment/Photography</option>
+             <option value="12">Arts and Entertainment/TV and Video</option>
+             <option value="13">Arts and Entertainment/Visual Arts and Design</option>
+             <option value="14">Arts and Entertainment/Web Design</option>
+             <option value="15">Autos and Vehicles</option>
+             <option value="16">Autos and Vehicles/Automotive Industry</option>
+             <option value="17">Autos and Vehicles/Automotive News</option>
+             <option value="18">Autos and Vehicles/Aviation</option>
+             <option value="19">Autos and Vehicles/Boating</option>
+             <option value="20">Autos and Vehicles/Car Buying</option>
+             <option value="21">Autos and Vehicles/Car Rentals</option>
+             <option value="22">Autos and Vehicles/Makes and Models</option>
+             <option value="23">Autos and Vehicles/Motorcycles</option>
+             <option value="24">Autos and Vehicles/Motorsports</option>
+             <option value="25">Autos and Vehicles/Trains and Railroads</option>
+             <option value="26">Beauty and Fitness</option>
+             <option value="27">Beauty and Fitness/Beauty</option>
+             <option value="28">Beauty and Fitness/Bodyart</option>
+             <option value="29">Beauty and Fitness/Cosmetics</option>
+             <option value="30">Beauty and Fitness/Fitness</option>
+             <option value="31">Beauty and Fitness/Hair</option>
+             <option value="32">Beauty and Fitness/Skin Care</option>
+             <option value="33">Beauty and Fitness/Weight Loss</option>
+             <option value="254">Blocked</option>
+             <option value="34">Books and Literature</option>
+             <option value="35">Books and Literature/Book Retailers</option>
+             <option value="36">Books and Literature/E Books</option>
+             <option value="256">Books and Literature/E-Books</option>
+             <option value="37">Books and Literature/Folklore</option>
+             <option value="38">Books and Literature/Guides and Reviews</option>
+             <option value="39">Business and Industry</option>
+             <option value="40">Business and Industry/Accounting</option>
+             <option value="41">Business and Industry/Aerospace and Defence</option>
+             <option value="42">Business and Industry/Agriculture and Forestry</option>
+             <option value="43">Business and Industry/Associations</option>
+             <option value="44">Business and Industry/Biotechnology and Pharmaceuticals</option>
+             <option value="45">Business and Industry/Business Services</option>
+             <option value="46">Business and Industry/Chemicals</option>
+             <option value="47">Business and Industry/Construction and Maintenance</option>
+             <option value="48">Business and Industry/Customer Service</option>
+             <option value="49">Business and Industry/E-Commerce</option>
+             <option value="50">Business and Industry/Energy</option>
+             <option value="51">Business and Industry/Industrial Goods and Services</option>
+             <option value="52">Business and Industry/Marketing and Advertising</option>
+             <option value="53">Business and Industry/Metals and Mining</option>
+             <option value="54">Business and Industry/Publishing and Printing</option>
+             <option value="55">Business and Industry/Real Estate</option>
+             <option value="56">Business and Industry/Textiles and Nonwovens</option>
+             <option value="57">Business and Industry/Transportation and Logistics</option>
+             <option value="58">Business and Industry/Wholesale Trade</option>
+             <option value="59">Career and Education</option>
+             <option value="60">Career and Education/Business Training</option>
+             <option value="61">Career and Education/Education</option>
+             <option value="62">Career and Education/Human Resources</option>
+             <option value="63">Career and Education/Jobs and Employment</option>
+             <option value="64">Career and Education/Universities and Colleges</option>
+             <option value="65">Computer and Electronics</option>
+             <option value="66">Computer and Electronics/Computer Hardware</option>
+             <option value="67">Computer and Electronics/Computer Security</option>
+             <option value="68">Computer and Electronics/Consumer Electronics</option>
+             <option value="69">Computer and Electronics/Graphics and Multimedia Tools</option>
+             <option value="70">Computer and Electronics/Mobile Computing</option>
+             <option value="71">Computer and Electronics/Networking</option>
+             <option value="72">Computer and Electronics/Programming</option>
+             <option value="73">Computer and Electronics/Software</option>
+             <option value="74">Finance</option>
+             <option value="75">Finance/Banking</option>
+             <option value="76">Finance/Credit, Loans and Mortgages</option>
+             <option value="77">Finance/Financial Management</option>
+             <option value="78">Finance/Grants and Scholarships</option>
+             <option value="79">Finance/Insurance</option>
+             <option value="80">Finance/Investing</option>
+             <option value="81">Food and Drink</option>
+             <option value="82">Food and Drink/Beverages</option>
+             <option value="83">Food and Drink/Catering</option>
+             <option value="84">Food and Drink/Cooking and Recipes</option>
+             <option value="85">Food and Drink/Food and Grocery Retailers</option>
+             <option value="86">Food and Drink/Restaurants and Delivery</option>
+             <option value="87">Food and Drink/Vegetarian and Vegan</option>
+             <option value="88">Gambling</option>
+             <option value="89">Gambling/Bingo</option>
+             <option value="90">Gambling/Casinos</option>
+             <option value="91">Gambling/Lottery</option>
+             <option value="92">Gambling/Poker</option>
+             <option value="93">Gambling/Regulation and Organizations</option>
+             <option value="94">Gambling/Sports</option>
+             <option value="95">Games</option>
+             <option value="96">Games/Board and Card Games</option>
+             <option value="97">Games/Miniatures</option>
+             <option value="98">Games/Online</option>
+             <option value="99">Games/Puzzles and Brainteasers</option>
+             <option value="100">Games/Roleplaying</option>
+             <option value="101">Games/Video Games</option>
+             <option value="102">Health</option>
+             <option value="103">Health/Addictions</option>
+             <option value="104">Health/Alternative and Natural Medicine</option>
+             <option value="105">Health/Child Health</option>
+             <option value="106">Health/Conditions and Diseases</option>
+             <option value="107">Health/Dentistry</option>
+             <option value="108">Health/Education and Resources</option>
+             <option value="109">Health/Healthcare Industry</option>
+             <option value="110">Health/Medicine</option>
+             <option value="111">Health/Mens Health</option>
+             <option value="112">Health/Mental Health</option>
+             <option value="113">Health/Nutrition</option>
+             <option value="114">Health/Pharmacy</option>
+             <option value="115">Health/Products and Shopping</option>
+             <option value="116">Health/Public Health and Safety</option>
+             <option value="117">Health/Reproductive Health</option>
+             <option value="118">Health/Senior Health</option>
+             <option value="119">Health/Womens Health</option>
+             <option value="120">Home and Garden</option>
+             <option value="121">Home and Garden/Gardening</option>
+             <option value="122">Home and Garden/Home Improvement</option>
+             <option value="123">Home and Garden/Interior Decor</option>
+             <option value="124">Home and Garden/Moving and Relocating</option>
+             <option value="125">Home and Garden/Nursery and Playroom</option>
+             <option value="126">Internet and Telecom</option>
+             <option value="127">Internet and Telecom/Ad Network</option>
+             <option value="128">Internet and Telecom/Chats and Forums</option>
+             <option value="129">Internet and Telecom/Domain Names and Register</option>
+             <option value="130">Internet and Telecom/Email</option>
+             <option value="131">Internet and Telecom/File Sharing</option>
+             <option value="132">Internet and Telecom/Search Engine</option>
+             <option value="133">Internet and Telecom/Social Network</option>
+             <option value="134">Internet and Telecom/Telecommunications</option>
+             <option value="135">Internet and Telecom/Web Hosting</option>
+             <option value="136">Law and Government</option>
+             <option value="137">Law and Government/Government</option>
+             <option value="138">Law and Government/Immigration and Visas</option>
+             <option value="139">Law and Government/Law</option>
+             <option value="140">Law and Government/Military and Defense</option>
+             <option value="141">News and Media</option>
+             <option value="142">News and Media/Business News</option>
+             <option value="143">News and Media/College and University Press</option>
+             <option value="144">News and Media/Magazines and E-Zines</option>
+             <option value="145">News and Media/Newspapers</option>
+             <option value="146">News and Media/Sports News</option>
+             <option value="147">News and Media/Technology News</option>
+             <option value="148">News and Media/Weather</option>
+             <option value="149">People and Society</option>
+             <option value="150">People and Society/Crime and Prosecution</option>
+             <option value="151">People and Society/Death</option>
+             <option value="152">People and Society/Disabled and Special Needs</option>
+             <option value="153">People and Society/Gay, Lesbian, and Bisexual</option>
+             <option value="154">People and Society/Genealogy</option>
+             <option value="155">People and Society/History</option>
+             <option value="156">People and Society/Holidays</option>
+             <option value="157">People and Society/Philanthropy</option>
+             <option value="158">People and Society/Philosophy</option>
+             <option value="159">People and Society/Relationships and Dating</option>
+             <option value="160">People and Society/Religion and Spirituality</option>
+             <option value="161">People and Society/Womens Interests</option>
+             <option value="162">Pets and Animals</option>
+             <option value="163">Pets and Animals/Animal Products and Service</option>
+             <option value="164">Pets and Animals/Birds</option>
+             <option value="165">Pets and Animals/Fish and Aquaria</option>
+             <option value="166">Pets and Animals/Horses</option>
+             <option value="167">Pets and Animals/Pets</option>
+             <option value="168">Recreation and Hobbies</option>
+             <option value="169">Recreation and Hobbies/Antiques</option>
+             <option value="170">Recreation and Hobbies/Camps</option>
+             <option value="171">Recreation and Hobbies/Climbing</option>
+             <option value="172">Recreation and Hobbies/Collecting</option>
+             <option value="173">Recreation and Hobbies/Crafts</option>
+             <option value="174">Recreation and Hobbies/Models</option>
+             <option value="175">Recreation and Hobbies/Nudism</option>
+             <option value="176">Recreation and Hobbies/Outdoors</option>
+             <option value="177">Recreation and Hobbies/Scouting</option>
+             <option value="178">Recreation and Hobbies/Theme Parks</option>
+             <option value="179">Recreation and Hobbies/Tobacco</option>
+             <option value="180">Recreation and Hobbies/Weapons</option>
+             <option value="181">Reference</option>
+             <option value="182">Reference/Archives</option>
+             <option value="183">Reference/Ask An Expert</option>
+             <option value="184">Reference/Dictionaries and Encyclopedias</option>
+             <option value="185">Reference/Directories</option>
+             <option value="186">Reference/Libraries and Museums</option>
+             <option value="187">Reference/Maps</option>
+             <option value="188">Science</option>
+             <option value="189">Science/Agriculture</option>
+             <option value="190">Science/Astronomy</option>
+             <option value="191">Science/Biology</option>
+             <option value="192">Science/Chemistry</option>
+             <option value="193">Science/Earth</option>
+             <option value="255">Science/Earth Sciences</option>
+             <option value="195">Science/Educational Resources</option>
+             <option value="196">Science/Engineering and Technology</option>
+             <option value="197">Science/Environment</option>
+             <option value="198">Science/Instruments and Supplies</option>
+             <option value="199">Science/Math</option>
+             <option value="200">Science/Physics</option>
+             <option value="201">Science/Social Sciences</option>
+             <option value="194">Sciences</option>
+             <option value="202">Shopping</option>
+             <option value="203">Shopping/Antiques and Collectibles</option>
+             <option value="204">Shopping/Auctions</option>
+             <option value="205">Shopping/Children</option>
+             <option value="206">Shopping/Classifieds</option>
+             <option value="207">Shopping/Clothing</option>
+             <option value="208">Shopping/Consumer Electronics</option>
+             <option value="209">Shopping/Coupons</option>
+             <option value="210">Shopping/Ethnic and Regional</option>
+             <option value="211">Shopping/Flowers</option>
+             <option value="212">Shopping/Furniture</option>
+             <option value="213">Shopping/General Merchandise</option>
+             <option value="214">Shopping/Gifts</option>
+             <option value="215">Shopping/Home and Garden</option>
+             <option value="216">Shopping/Jewelry</option>
+             <option value="217">Shopping/Music</option>
+             <option value="218">Shopping/Office Products</option>
+             <option value="219">Shopping/Publications</option>
+             <option value="220">Shopping/Sports</option>
+             <option value="221">Shopping/Weddings</option>
+             <option value="222">Sports</option>
+             <option value="223">Sports/Baseball</option>
+             <option value="224">Sports/Basketball</option>
+             <option value="225">Sports/Boxing</option>
+             <option value="226">Sports/Cycling and Biking</option>
+             <option value="227">Sports/Equestrian</option>
+             <option value="228">Sports/Extreme Sports</option>
+             <option value="229">Sports/Fantasy Sports</option>
+             <option value="230">Sports/Fishing</option>
+             <option value="231">Sports/Football</option>
+             <option value="232">Sports/Golf</option>
+             <option value="233">Sports/Martial Arts</option>
+             <option value="234">Sports/Rugby</option>
+             <option value="235">Sports/Running</option>
+             <option value="236">Sports/Soccer</option>
+             <option value="237">Sports/Tennis</option>
+             <option value="238">Sports/Volleyball</option>
+             <option value="239">Sports/Water Sports</option>
+             <option value="240">Sports/Winter Sports</option>
+             <option value="241">Travel</option>
+             <option value="242">Travel/Accommodation and Hotels</option>
+             <option value="243">Travel/Airlines and Airports</option>
+             <option value="244">Travel/Roads and Highways</option>
+             <option value="245">Travel/Tourism</option>
+             <option value="253">Unknown Category</option>
+             </select>
+         </div>
+         <div class="col-md-2">
+             <div>
+             <p><button type="button" class="btn btn-primary"><i class="fa fa-angle-double-right"></i></button></p>
+             <p><button type="button" class="btn btn-primary"><i class="fa fa-angle-right"></i></button></p>
+             <p><button type="button" class="btn btn-primary"><i class="fa fa-angle-left"></i></button></p>
+             <button type="button" class="btn btn-primary"><i class="fa fa-angle-double-left"></i></button>
+             </div>
+         </div>
+         <div class="col-md-5">
+             <select size="10" multiple class="form-control">
+                 <option>1</option>
+                 <option>2</option>
+                 <option>3</option>
+                 <option>4</option>
+                 <option>5</option>
+             </select>
+         </div>
+
+
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+
+
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js" ></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/gsap/src/minified/TweenMax.min.js"></script>
+<script src="bower_components/lodash/lodash.min.js"></script
+</html>
