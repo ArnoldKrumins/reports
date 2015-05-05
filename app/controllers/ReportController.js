@@ -8,6 +8,7 @@ app.controller('ReportController',['$scope','fakeDataService' ,function($scope,f
     $scope.selecteditems =[];
     $scope.selectednames=[];
     $scope.selected = {settingone:'',settingtwo:'',settingthree:'',settingfour:''};
+    $scope.selectedcategories =[];
 
    $scope.init = function(){
        $scope.data =  fakeDataService.getComponents();
