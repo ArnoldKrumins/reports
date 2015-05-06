@@ -4,11 +4,11 @@
 app.directive('advertiserCategories',function(){
     return{
         restrict:'AE',
-        scope:{ categories:'=advertiserCategories',selectedcategories:'='},
+        scope:{ categories:'=advertiserCategories',selectedCategories:'=',title:'@',selectedTitle:'@'},
         template:' <div class="advertiser-categories col-sm-12 col-md-12 col-lg-12">' +
-                     '<p>Automatic approval of advertiser categories</p>' +
+                     '<h4>{{ title }}</h4>' +
                      ' <div class="categories col-md-6">' +
-                        '<p>Categories</p>' +
+                        '<p>Available Categories</p>' +
                         '<select size="10" multiple class="form-control">' +
                             '<option ng-model="selectedcategories" ng-repeat="category in categories" value="{{category.value }}">{{ category.name }}</option>' +
                         '</select>' +
@@ -22,7 +22,7 @@ app.directive('advertiserCategories',function(){
                     '</div>' +
 
                     ' <div class="categories-selected col-md-6">' +
-                        '<p>Selected</p>' +
+                        '<p>{{ selectedTitle }}</p>' +
                         '<select size="10" multiple class="form-control">' +
                             '<option ng-repeat="category in categories" value="{{category.value }}">{{ category.name }}</option>' +
                         '</select>' +

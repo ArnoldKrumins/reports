@@ -55,7 +55,8 @@ app.directive('properties',['$sce', function($sce){
             '</select>' +
             '</div>' +
             '</div>' +
-            '<div advertiser-categories="categories" ></div>' +
+            '<div advertiser-categories="categories" title="Automatic approval of advertiser categories" selected-title="Automatically approved categories" ></div>' +
+            '<div advertiser-categories="categories" title="Automatic rejection of advertiser categories" selected-title="Automaticaly rejected categories" ></div>' +
             '<div class="form-group">' +
             '<button type="button" class="btn btn-success pull-right">Save</button>' +
             '</div>' +
