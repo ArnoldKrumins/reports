@@ -65,7 +65,7 @@ body {
 }
 .main ul li div.advertiser div.stats {
   position: relative;
-  top: 10px;
+  top: 0px;
   left: 18px;
 }
 .main ul li div.advertiser div.stats span {
