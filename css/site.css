@@ -65,8 +65,8 @@ body {
 }
 .main ul li div.advertiser div.stats {
   position: relative;
-  top: 0px;
-  left: 18px;
+  top: 5px;
+  left: 5px;
 }
 .main ul li div.advertiser div.stats span {
   font-size: 18px;
