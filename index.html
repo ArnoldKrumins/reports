@@ -16,6 +16,7 @@
 <div ng-controller="ReportController" ng-init="init()" class="container-fluid">
     <div class="row">
         <div class="main col-sm-5 col-md-8 col-lg-7">
+            <div publisers-list="publishers.SelectList"></div>
             <div components items="data"></div>
         </div>
         <div class="col-sm-7 col-md-4 col-lg-5">
@@ -40,5 +41,6 @@
 <script src="app/directives/properties.js"></script>
 <script src="app/directives/item.js"></script>
 <script src="app/directives/advertiserCategories.js"></script>
+<script src="app/directives/publishers.js"></script>
 
 </html>
