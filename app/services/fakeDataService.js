@@ -42,60 +42,46 @@ app.factory('fakeDataService',function(){
 
             ]
 
-        },
-
-        getPublishers: function(){
-
-            return {SelectList: [
-            {
-                "Selected": false,
-                "Text": "All",
-                "Value": "-1",
-                "sub":"Publishers"
-            },
-            {
-                "Selected": true,
-                "Text": "AdaptADX.com",
-                "Value": "-2",
-                "sub":"Publishers"
-            },
-//            {
-//                "Selected": false,
-//                "Text": "Sub Publishers",
-//                "Value": "$$OPTGROUP$$OPTGROUP$$",
-//                "sub":""
-//
-//            },
-            {
-                "Selected": false,
-                "Text": "Eskilstuna-Kuriren (EK)",
-                "Value": "1176",
-                "sub":"Sub Publishers"
-            },
-            {
-                "Selected": false,
-                "Text": "Familjeliv",
-                "Value": "1173",
-                "sub":"Sub Publishers"
-            },
-            {
-                "Selected": false,
-                "Text": "MittMedia Dev",
-                "Value": "1174",
-                "sub":"Sub Publishers"
-            }
-            ]};
-
-
         }
 
     }
 
 })
 
-
-
-
-
-
-
+/*
+    "success": true,
+    "message": null,
+    "data": {
+    "SelectList": [
+        {
+            "Selected": false,
+            "Text": "All",
+            "Value": "-1"
+        },
+        {
+            "Selected": true,
+            "Text": "AdaptADX.com",
+            "Value": "-2"
+        },
+        {
+            "Selected": false,
+            "Text": "Sub Publishers",
+            "Value": "$$OPTGROUP$$OPTGROUP$$"
+        },
+        {
+            "Selected": false,
+            "Text": "Eskilstuna-Kuriren (EK)",
+            "Value": "1176"
+        },
+        {
+            "Selected": false,
+            "Text": "Familjeliv",
+            "Value": "1173"
+        },
+        {
+            "Selected": false,
+            "Text": "MittMedia Dev",
+            "Value": "1174"
+        }
+    ]
+}

@@ -10,12 +10,19 @@ app.controller('ReportController',['$scope','fakeDataService' ,function($scope,f
     $scope.selected = {settingone:'',settingtwo:'',settingthree:'',settingfour:''};
     $scope.selectedcategories =[];
     $scope.publishers = [];
-
+    $scope.htmlfragment = null;
 
    $scope.init = function(){
        $scope.data =  fakeDataService.getComponents();
        $scope.advertiserdata = fakeDataService.getAdvertiserCategories();
        $scope.publishers = fakeDataService.getPublishers();
    }
+
+    $scope.getPublisherValue = function () {
+
+        console.log('publisher');
+    }
+
+
 
 }]);
