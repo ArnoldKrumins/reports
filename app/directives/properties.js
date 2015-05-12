@@ -67,7 +67,7 @@ app.directive('properties',['$sce', function($sce){
 
             var self = this;
 
-            scope.$on("item-selected", function (event, item) {
+                scope.$on("item-selected", function (event, item) {
 
                 var idx = _.findIndex(scope.selecteditems, 'name', item.name);
 
