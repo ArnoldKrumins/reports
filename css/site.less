@@ -208,4 +208,65 @@ body{
           width: 35px;
         }
   }
+
+
+
+}
+
+#categories-container{
+  position: relative;
+  width:600px;
+  height:600px;
+  overflow-x: auto;
+  border: solid rgb(128, 124, 124) 2px;
+
+  .category-search{
+    position: relative;
+    padding: 5px 15px 5px 200px;
+
+    i{
+      position: absolute;
+      top: 12px;
+      right: 25px;
+      font-size: 20px;
+      color: gray;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0px;
+    margin-left: -30px;
+
+    li {
+      position: relative;
+      padding: 6px;
+      .category-buttons {
+        position: absolute;
+        right: 10px;
+        top: 4px;
+
+         button{
+           margin-right: 5px;
+         }
+      }
+    }
+  }
+  }
+
+
+.indent{
+  margin-left: 60px;
+}
+
+.category-header{
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+.odd{
+  background-color: lightblue;
+}
+.even{
+  background-color: lightcyan;
 }

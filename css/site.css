@@ -180,3 +180,51 @@ body {
 .advertiser-categories .category-buttons button {
   width: 35px;
 }
+#categories-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  overflow-x: auto;
+  border: solid #807c7c 2px;
+}
+#categories-container .category-search {
+  position: relative;
+  padding: 5px 15px 5px 200px;
+}
+#categories-container .category-search i {
+  position: absolute;
+  top: 12px;
+  right: 25px;
+  font-size: 20px;
+  color: gray;
+}
+#categories-container ul {
+  list-style: none;
+  padding: 0px;
+  margin-left: -30px;
+}
+#categories-container ul li {
+  position: relative;
+  padding: 6px;
+}
+#categories-container ul li .category-buttons {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+}
+#categories-container ul li .category-buttons button {
+  margin-right: 5px;
+}
+.indent {
+  margin-left: 60px;
+}
+.category-header {
+  font-weight: bold;
+  margin-left: 40px;
+}
+.odd {
+  background-color: lightblue;
+}
+.even {
+  background-color: lightcyan;
+}
