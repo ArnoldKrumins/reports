@@ -5,17 +5,53 @@ app.directive('categories',function(){
 
     return{
         restrict:'EA',
-        scope:{categories:'=categories'},
+        scope:{categories:'=categories', approved:'=',rejected:'='},
         template:'\
-                 <ul ng-repeat-start="category in categories">\
-                  <li ng-repeat="item in category.ParentId">{{ item.Category }}\
-                  <button><i class="fa fa-thumbs-o-up"></i></button>\
-                  <button><i class="fa fa-thumbs-o-down"></i></button>\
-                  </li ng-repeat-end >\
-            </ul>',
+            <h4>Automatic approval of advertiser categories</h4>\
+            <tabset>\
+            <tab heading="Available Categories">\
+                <div class="categories-container" >\
+                    <div class="category-search"><i class="fa fa-search"></i><input ng-model="searchText" type="search" class="form-control" placeholder="Search"></div>\
+                        <ul>\
+                            <li ng-repeat="category in categories | filter:searchText" ng-class-odd="\'odd\'" ng-class-even="\'even\'"  >\
+                               <div category="category" ></div>\
+                            </li>\
+                        </ul>\
+                    </div>\
+                </tab>\
+                <tab heading="Approved Categories">\
+                    <div approved-rejected-categories="approved" key="approve" ></div>\
+                </tab>\
+                <tab heading="Rejected Categories">\
+                   <div approved-rejected-categories="rejected" key="reject" ></div>\
+                </tab>\
+            </tabset>',
         link:function(scope,element,attrs){
 
-            var s = scope.categories;
+            scope.$on("approve", function (e ,category) {
+
+                if (angular.isUndefined(scope.approved)) {scope.approved = [];}
+
+                scope.$apply(function(){
+                    scope.categories.splice(scope.categories.indexOf(category),1);
+                    scope.approved.push(category);
+                });
+
+                console.log('approve');
+            });
+
+            scope.$on("reject", function (e ,category) {
+                console.log('reject');
+            });
+
+            scope.$on("approve-remove", function (e ,category) {
+                console.log('approve remove');
+            });
+
+            scope.$on("reject-remove", function (e ,category) {
+                console.log('reject remove');
+            });
+
         }
 
     }

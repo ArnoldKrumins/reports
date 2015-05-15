@@ -213,12 +213,12 @@ body{
 
 }
 
-#categories-container{
+.categories-container{
   position: relative;
-  width:600px;
-  height:600px;
+  height:590px;
   overflow-x: auto;
-  border: solid rgb(128, 124, 124) 2px;
+  border: solid rgb(128, 124, 124) 1px;
+  background-color: rgb(97, 150, 184);
 
   .category-search{
     position: relative;
@@ -227,9 +227,12 @@ body{
     i{
       position: absolute;
       top: 12px;
-      right: 25px;
+      left: 207px;
       font-size: 20px;
-      color: gray;
+      color: rgb(176, 176, 176);
+    }
+    input{
+      padding-left: 30px;
     }
   }
 
@@ -244,7 +247,7 @@ body{
       .category-buttons {
         position: absolute;
         right: 10px;
-        top: 4px;
+        top: 3px;
 
          button{
            margin-right: 5px;

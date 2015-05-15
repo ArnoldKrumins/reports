@@ -22,35 +22,7 @@
         </div>
         <div class="col-sm-7 col-md-4 col-lg-5">
 
-            <!--<div >-->
-            <!--<ul ng-repeat="category in categories.data">-->
-                <!--{{ category.Category }}-->
-                <!--<li>-->
-                    <!--<button><i class="fa fa-thumbs-o-up"></i></button>-->
-                    <!--<button><i class="fa fa-thumbs-o-down"></i></button>-->
-                <!--</li >-->
-            <!--</ul>-->
-            <!--</div >-->
-
-            <tabset>
-                <tab heading="Available Categories">
-                    <div id="categories-container" >
-                        <div class="category-search"><i class="fa fa-search"></i><input ng-model="searchText" type="search" class="form-control" id="exampleInputName2" placeholder="Search"></div>
-                        <ul>
-                            <li ng-repeat="category in categories.data | filter:searchText" ng-class-odd="'odd'" ng-class-even="'even'"  >
-                                <span class="category-name" ng-class="{'indent':category.ParentId !== null,'category-header':category.ParentId === null}" >{{ category.Category}}</span>
-                                <span class="category-buttons"><button><i class="fa fa-thumbs-o-up"></i></button><button><i class="fa fa-thumbs-o-down"></i></button></span>
-                            </li>
-                        </ul>
-                    </div>
-                </tab>
-                <tab heading="Approved Categories">Short Labeled Justified content</tab>
-                <tab heading="Rejected Categories">Long Labeled Justified content</tab>
-            </tabset>
-
-
-
-            <!--<div categories="categories.data"></div>-->
+            <div categories="categories.data" approved="approvedcategories.data" rejected="rejectedcategories.data"></div>
             <!--<div properties="selecteditems" names="selectednames" selected="selected" categories="advertiserdata"></div>-->
 
         </div>
@@ -75,5 +47,8 @@
 <script src="app/directives/advertiserCategories.js"></script>
 <script src="app/directives/publishers.js"></script>
 <script src="app/directives/categories.js"></script>
+<script src="app/directives/approvedRejectedCategories.js"></script>
+<script src="app/directives/category.js"></script>
+<script src="app/directives/approveRejectCategory.js"></script>
 
 </html>
