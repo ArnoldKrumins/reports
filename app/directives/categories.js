@@ -9,7 +9,10 @@ app.directive('categories',function(){
         template:'\
             <h4>Automatic approval of advertiser categories</h4>\
             <tabset>\
-            <tab heading="Available Categories">\
+            <tab>\
+                <tab-heading>\
+                    Available  <span class="badge">{{ categories.length }}</span>\
+                </tab-heading>\
                 <div class="categories-container" >\
                     <div class="category-search"><i class="fa fa-search"></i><input ng-model="searchText" type="search" class="form-control" placeholder="Search"></div>\
                         <ul>\
@@ -19,10 +22,16 @@ app.directive('categories',function(){
                         </ul>\
                     </div>\
                 </tab>\
-                <tab heading="Approved Categories">\
+                <tab>\
+                    <tab-heading>\
+                    Approved  <span class="badge">{{ approved.length }}</span>\
+                    </tab-heading>\
                     <div approved-rejected-categories="approved" key="approve" ></div>\
                 </tab>\
                 <tab heading="Rejected Categories">\
+                    <tab-heading>\
+                        Rejected  <span class="badge">{{ rejected.length }}</span>\
+                    </tab-heading>\
                    <div approved-rejected-categories="rejected" key="reject" ></div>\
                 </tab>\
             </tabset>',
