@@ -28,6 +28,7 @@ app.directive('categories',function(){
             </tabset>',
         link:function(scope,element,attrs){
 
+            //goes to approve list
             scope.$on("approve", function (e ,category) {
 
                 if (angular.isUndefined(scope.approved)) {scope.approved = [];}
@@ -40,9 +41,19 @@ app.directive('categories',function(){
                 console.log('approve');
             });
 
+
             scope.$on("reject", function (e ,category) {
+
+                if (angular.isUndefined(scope.rejected)) {scope.rejected = [];}
+
+                scope.$apply(function(){
+                    scope.categories.splice(scope.categories.indexOf(category),1);
+                    scope.rejected.push(category);
+                });
+
                 console.log('reject');
             });
+
 
             scope.$on("approve-remove", function (e ,category) {
                 console.log('approve remove');
