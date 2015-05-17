@@ -231,3 +231,7 @@ body {
 .even {
   background-color: lightcyan;
 }
+.selected {
+  color: lightgrey;
+  text-decoration: line-through;
+}

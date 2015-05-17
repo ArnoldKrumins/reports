@@ -16,8 +16,8 @@ app.directive('categories',function(){
                 <div class="categories-container" >\
                     <div class="category-search"><i class="fa fa-search"></i><input ng-model="searchText" type="search" class="form-control" placeholder="Search"></div>\
                         <ul>\
-                            <li ng-repeat="category in categories | filter:searchText" ng-class-odd="\'odd\'" ng-class-even="\'even\'"  >\
-                               <div category="category" ></div>\
+                            <li ng-repeat="category in categories track by $index | filter:searchText" ng-class-odd="\'odd\'" ng-class-even="\'even\'"  >\
+                               <div category="category"></div>\
                             </li>\
                         </ul>\
                     </div>\
@@ -43,8 +43,28 @@ app.directive('categories',function(){
                 if (angular.isUndefined(scope.approved)) {scope.approved = [];}
 
                 scope.$apply(function(){
-                    scope.categories.splice(scope.categories.indexOf(category),1);
-                    scope.approved.push(category);
+
+                    if(category.ParentId === null){ /* Selected a parent node. Move + children. */
+
+                        scope.approved.push(category);
+                        scope.categories.splice(scope.categories.indexOf(category),1);
+
+                        angular.forEach(_.pluck(_.filter(scope.categories, { 'ParentId': category.Id}),'Id'), function(value, key) {
+
+                            var idx =_.findIndex(scope.categories, { 'Id': value });
+                            scope.approved.push(scope.categories[idx]);
+                            //scope.categories.splice(scope.categories[idx],1);
+                            scope.categories[idx].Selected = true;
+
+                        });
+
+
+                    }
+                    else{
+                        scope.categories.splice(scope.categories.indexOf(category),1);
+                        scope.approved.push(category);
+                    }
+
                 });
 
                 console.log('approve');

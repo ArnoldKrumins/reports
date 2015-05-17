@@ -18,12 +18,14 @@ app.controller('ReportController',['$scope','fakeDataService' ,function($scope,f
 
 
     $scope.init = function(){
-        $scope.data =  fakeDataService.getComponents();
+
+        $scope.data = fakeDataService.getComponents();
         $scope.advertiserdata = fakeDataService.getAdvertiserCategories();
         $scope.publishers = fakeDataService.getPublishers();
-        $scope.categories = fakeDataService.getCategories();
-      //  $scope.approvedcategories = fakeDataService.getCategories();
-      //  $scope.rejectedcategories = fakeDataService.getCategories();
+        $scope.categories = _.forEach(fakeDataService.getCategories().data, function(o) {
+            _.assign(o, { 'Selected': false });
+        });
+
     }
 
     $scope.getPublisherValue = function () {
@@ -34,6 +36,4 @@ app.controller('ReportController',['$scope','fakeDataService' ,function($scope,f
 
 
 }]);
-/**
- * Created by arnold.krumins on 30/04/2015.
- */
+
