@@ -7,19 +7,17 @@ app.directive('approvedRejectedCategories',function(){
         restrict:'EA',
         scope:{categories:'=approvedRejectedCategories',key:'@'},
         template:'<div class="categories-container">\
-                        <ul>\
-                            <li ng-repeat="category in categories" ng-class-odd="\'odd\'" ng-class-even="\'even\'">\
-                               <div approve-reject-category="category" key="{{ key }}" ></div>\
-                            </li>\
-                        </ul>\
-                   </div>',
-        link:function(scope,element,__){
+                        <div class="category-search">\
+                            <i class="fa fa-search"></i><input ng-model="searchText" type="search" class="form-control" placeholder="Search">\
+                        </div>\
+                            <ul>\
+                               <li ng-repeat="category in categories | filter:searchText" ng-class-odd="\'odd\'" ng-class-even="\'even\'">\
+                                   <div approve-reject-category="category" key="{{ key }}" ></div>\
+                               </li>\
+                            </ul>\
+                        </div>\
+                   </div>'
 
-           // element.find('button').bind('click',function(){
-           //     $rootScope.$broadcast(scope.key,scope.category);
-           // });
-
-        }
     }
 
 });

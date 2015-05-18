@@ -36,161 +36,105 @@ app.directive('categories',function(){
                    <div approved-rejected-categories="rejected" key="reject" ></div>\
                 </tab>\
             </tabset>',
-        link:function(scope,element,attrs){
+        link:function(scope,__,__){
 
 
-
-
-
+            /* Event Listeners */
             scope.$on("approve", function (e ,category) {
-
-                if (angular.isUndefined(scope.approved)) {scope.approved = [];}
-
-                scope.$apply(function(){
-
-                    if(category.ParentId === null){ /* Selected a parent node. Move + children. */
-
-                        scope.approved.push(category);
-                        var parentIdx = _.findIndex(scope.categories, { 'Id': category.Id });
-                        scope.categories[parentIdx].Selected = true;
-
-                        angular.forEach(_.pluck(_.filter(scope.categories, { 'ParentId': category.Id}),'Id'), function(value) {
-
-                            var idx =_.findIndex(scope.categories, { 'Id': value });
-                            scope.approved.push(scope.categories[idx]);
-                            scope.categories[idx].Selected = true;
-
-                        });
-
-                    }
-                    else{
-                        scope.categories.splice(scope.categories.indexOf(category),1);
-                        scope.approved.push(category);
-                    }
-
-                });
-
-                console.log('approve');
+                scope.approveReject(scope.approved,category);
             });
-
 
             scope.$on("reject", function (e ,category) {
-
-
-                if (angular.isUndefined(scope.rejected)) {scope.rejected = [];}
-
-                scope.$apply(function(){
-
-                    if(category.ParentId === null){ /* Selected a parent node. Move + children. */
-
-                        scope.rejected.push(category);
-                        var parentIdx = _.findIndex(scope.categories, { 'Id': category.Id });
-                        scope.categories[parentIdx].Selected = true;
-
-                        angular.forEach(_.pluck(_.filter(scope.categories, { 'ParentId': category.Id}),'Id'), function(value) {
-
-                            var idx =_.findIndex(scope.categories, { 'Id': value });
-                            scope.rejected.push(scope.categories[idx]);
-                            scope.categories[idx].Selected = true;
-
-                        });
-
-                    }
-                    else{
-                        scope.categories.splice(scope.categories.indexOf(category),1);
-                        scope.rejected.push(category);
-                    }
-
-                });
-                console.log('reject');
+                scope.approveReject(scope.rejected,category);
             });
-
-
-
 
             scope.$on("approve-remove", function (e ,category) {
-
-                scope.$apply(function(){
-
-                    if (category.ParentId === null) { /* Selected a parent node. Move + children. */
-
-                        var parentIdx = _.findIndex(scope.categories, { 'Id': category.Id });
-                        scope.categories[parentIdx].Selected = false;
-                        scope.approved.splice(scope.approved.indexOf(category), 1);
-
-                        angular.forEach(_.pluck(_.filter(scope.approved, { 'ParentId': category.Id}), 'Id'), function (value) {
-
-                            scope.approved.splice(_.findIndex(scope.approved, { 'Id': value }), 1);
-                            scope.categories[_.findIndex(scope.categories, { 'Id': value })].Selected = false;
-
-                        });
-
-                    }
-                    else {
-                        scope.approved.splice(_.findIndex(scope.approved, { 'Id': category.Id }), 1);
-                        scope.categories[_.findIndex(scope.categories, { 'Id': category.Id })].Selected = false;
-                    }
-
-                });
+                scope.approveRejectRemove(scope.approved,category);
             });
-
-
 
             scope.$on("reject-remove", function (e ,category) {
-
-                scope.$apply(function () {
-
-                    if (category.ParentId === null) { /* Selected a parent node. Move + children. */
-
-                        var parentIdx = _.findIndex(scope.categories, { 'Id': category.Id });
-                        scope.categories[parentIdx].Selected = false;
-                        scope.rejected.splice(scope.rejected.indexOf(category), 1);
-
-                        angular.forEach(_.pluck(_.filter(scope.rejected, { 'ParentId': category.Id}), 'Id'), function (value) {
-
-                            scope.rejected.splice(_.findIndex(scope.rejected, { 'Id': value }), 1);
-                            scope.categories[_.findIndex(scope.categories, { 'Id': value })].Selected = false;
-
-                        });
-
-                    }
-                    else {
-                        scope.rejected.splice(_.findIndex(scope.rejected, { 'Id': category.Id }), 1);
-                        scope.categories[_.findIndex(scope.categories, { 'Id': category.Id })].Selected = false;
-                    }
-
-                });
+                scope.approveRejectRemove(scope.rejected,category);
             });
 
-            scope.$on("approve-all", function (e ,category) {
-                console.log('approve all');
-                scope.rejected = [];
-                moveAll(scope.approved);
+            scope.$on("approve-all", function () {
+                scope.resetLists();
+                scope.moveAll(scope.approved);
             });
 
-            scope.$on("reject-all", function (e ,category) {
-                console.log('reject all');
-                scope.approved = [];
-                moveAll(scope.rejected);
+            scope.$on("reject-all", function () {
+                scope.resetLists();
+                scope.moveAll(scope.rejected);
             });
 
-            scope.$on("reset-all", function (e ,category) {
+            scope.$on("reset-all", function () {
 
                 scope.$apply(function () {
 
                     angular.forEach(scope.categories, function (value) {
                         value.Selected = false;
                     });
-
-                    scope.rejected = [];
-                    scope.approved = [];
+                    scope.resetLists();
                 });
-
             });
 
 
-            var moveAll = function(list){
 
+
+            /* Methods */
+            scope.approveReject = function(list,category){
+
+                if (angular.isUndefined(list)) {list = [];}
+
+                scope.$apply(function(){
+
+                    if(category.ParentId === null){
+
+                        list.push(category);
+                        var parentIdx = _.findIndex(scope.categories, { 'Id': category.Id });
+                        scope.categories[parentIdx].Selected = true;
+
+                        angular.forEach(_.pluck(_.filter(scope.categories, { 'ParentId': category.Id}),'Id'), function(value) {
+                            var idx =_.findIndex(scope.categories, { 'Id': value });
+                            list.push(scope.categories[idx]);
+                            scope.categories[idx].Selected = true;
+                        });
+
+                    }
+                    else{
+                        scope.categories.splice(scope.categories.indexOf(category),1);
+                        list.push(category);
+                    }
+
+                });
+
+            };
+
+            scope.approveRejectRemove = function(list,category){
+
+                scope.$apply(function(){
+
+                    if (category.ParentId === null) {
+
+                        var parentIdx = _.findIndex(scope.categories, { 'Id': category.Id });
+                        scope.categories[parentIdx].Selected = false;
+                        list.splice(list.indexOf(category), 1);
+
+                        angular.forEach(_.pluck(_.filter(list, { 'ParentId': category.Id}), 'Id'), function (value) {
+                            list.splice(_.findIndex(list, { 'Id': value }), 1);
+                            scope.categories[_.findIndex(scope.categories, { 'Id': value })].Selected = false;
+                        });
+
+                    }
+                    else {
+                        list.splice(_.findIndex(list, { 'Id': category.Id }), 1);
+                        scope.categories[_.findIndex(scope.categories, { 'Id': category.Id })].Selected = false;
+                    }
+
+                });
+
+            }
+
+            scope.moveAll = function(list){
                 scope.$apply(function () {
                     angular.forEach(scope.categories, function (value) {
                         value.Selected = true;
@@ -199,11 +143,13 @@ app.directive('categories',function(){
                 });
             };
 
+            scope.resetLists = function(){
+                scope.rejected = [];
+                scope.approved = [];
+            };
 
             scope.CategoryCount = function(){
-
                 return _.filter(scope.categories, { 'Selected': false}).length;
-
             };
 
         }
