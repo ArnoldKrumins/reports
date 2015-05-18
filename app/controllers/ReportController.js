@@ -17,6 +17,10 @@ app.controller('ReportController',['$scope','fakeDataService' ,function($scope,f
     $scope.reject = 'reject';
 
 
+    $scope.disableApproveAll = false;
+    $scope.disableRejectAll = false;
+
+
     $scope.init = function(){
 
         $scope.data = fakeDataService.getComponents();

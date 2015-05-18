@@ -14,9 +14,6 @@ app.directive('category',['$rootScope','$timeout', function($rootScope,$timeout)
                     </span>',
         controller:function($scope,$element){
 
-           $scope.Disable = function(cat){
-                return cat.Seleted;
-            }
 
             $scope.approve = function(){
                 $timeout(function(){
