@@ -6,10 +6,11 @@ app.directive('properties',['$sce', function($sce){
     return{
         restrict:'EA',
         replace:true,
-        scope:{ selecteditems:'=properties',names:'=',selected:'=',categories:'='},
+        scope:{ selecteditems:'=properties',names:'=',selected:'=',adcategories:'=',approvedcategories:'=',rejectedcategories:'=' },
         template:'<div class="properties">' +
             '<h5><i class="fa fa-cogs"></i>Properties</h5>' +
             '<h5 class="col-sm-8 col-md-9" id="explicitlyTrustedHtml" ng-bind-html="names"></h5>' +
+//            '<div categories="adcategories" approved="approvedcategories" rejected="rejectedcategories"></div>' +
             '<form class="form-horizontal">' +
 
             '<div class="form-group">' +
@@ -55,8 +56,8 @@ app.directive('properties',['$sce', function($sce){
             '</select>' +
             '</div>' +
             '</div>' +
-            '<div advertiser-categories="categories" title="Automatic approval of advertiser categories" selected-title="Automatically approved categories" ></div>' +
-            '<div advertiser-categories="categories" title="Automatic rejection of advertiser categories" selected-title="Automaticaly rejected categories" ></div>' +
+//            '<div advertiser-categories="adcategories" title="Automatic approval of advertiser categories" selected-title="Automatically approved categories" ></div>' +
+//            '<div advertiser-categories="adcategories" title="Automatic rejection of advertiser categories" selected-title="Automaticaly rejected categories" ></div>' +
             '<div class="form-group">' +
             '<button type="button" class="btn btn-success pull-right">Save</button>' +
             '</div>' +
@@ -66,6 +67,29 @@ app.directive('properties',['$sce', function($sce){
         link: function(scope,element,attrs){
 
             var self = this;
+
+            scope.$on("select-all-buyers", function (e ,items) {
+
+                scope.selecteditems = items;
+
+                scope.names  = _.reduce(_.map(scope.selecteditems, 'name'), function(result,name,key) {
+                    result[key] = "<span id=\'advertisers\' class=\'badge\'>" + name + '<a href="#" ng-click=""><i class="fa fa-times"></i></a></span>';
+                    return result;
+                }, []).join("");
+
+                self.explicitlyTrustedHtml = $sce.trustAsHtml('<p> scope.names </p>');
+            });
+
+            scope.$on("deselect-all-buyers", function (e ,items) {
+                scope.selecteditems = [];
+                scope.names  = _.reduce(_.map(scope.selecteditems, 'name'), function(result,name,key) {
+                    result[key] = "<span id=\'advertisers\' class=\'badge\'>" + name + '<a href="#" ng-click=""><i class="fa fa-times"></i></a></span>';
+                    return result;
+                }, []).join("");
+            });
+
+
+
 
                 scope.$on("item-selected", function (event, item) {
 

@@ -20,6 +20,7 @@ app.controller('ReportController',['$scope','fakeDataService' ,function($scope,f
     $scope.disableApproveAll = false;
     $scope.disableRejectAll = false;
 
+    $scope.selectAll= false;
 
     $scope.init = function(){
 

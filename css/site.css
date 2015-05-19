@@ -74,7 +74,7 @@ body {
   top: 1px;
   color: #4c7489;
 }
-.main ul li div.advertiser i#selected-item {
+.main ul li div.advertiser i.selected-item {
   position: absolute;
   right: 2px;
   font-size: 25px;

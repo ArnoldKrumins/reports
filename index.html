@@ -18,12 +18,12 @@
         <div class="main col-sm-5 col-md-5 col-lg-7">
            <!--  <div publisers-list="publishers.SelectList"></div> -->
             <div publisher-list-two="publishers.data.SelectList"  fragment="htmlfragment" click="getPublisherValue()"></div>
-            <div components items="data"></div>
+            <div components items="data" selectall="selectAll"></div>
         </div>
         <div class="col-sm-7 col-md-7 col-lg-5">
 
             <div categories="categories" approved="approvedcategories" rejected="rejectedcategories"></div>
-            <!--<div properties="selecteditems" names="selectednames" selected="selected" categories="advertiserdata"></div>-->
+            <div properties="selecteditems" names="selectednames" selected="selected" adcategories="categories" approvedcategories="approvedcategories" rejectedcategories="rejectedcategories"></div>
 
         </div>
     </div>
