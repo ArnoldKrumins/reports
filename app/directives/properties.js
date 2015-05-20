@@ -11,12 +11,13 @@ app.directive('properties',['$sce', function($sce){
             '<h5><i class="fa fa-cogs"></i>Properties</h5>' +
             '<h5 class="col-sm-8 col-md-9" id="explicitlyTrustedHtml" ng-bind-html="names"></h5>' +
 //            '<div categories="adcategories" approved="approvedcategories" rejected="rejectedcategories"></div>' +
-            '<form class="form-horizontal">' +
+            '<form name="settingsform" class="form-horizontal">' +
 
-            '<div class="form-group">' +
+            '<div class="form-group" ng-class="{ \'has-error\': settingsform.one.$invalid }">' +
             '<label for="input-one" class="col-sm-8 col-md-9 control-label">No User Matching Threshold </label>'+
             '<div class="col-sm-4 col-md-3">' +
-            '<input type="text" ng-model="selected.settingone" class="form-control pull-right" id="input-one" placeholder="%">' +
+            '<input name="one" type="text" ng-model="selected.settingone" ng-pattern="/^\\-?\\d+((\\.|\\,)\\d+)?$/\" class="form-control pull-right" id="input-one" placeholder="%">' +
+             'Valid? {{ settingsform.one.$valid}}' +
             '</div>' +
             '</div>' +
             '<div class="form-group">' +
