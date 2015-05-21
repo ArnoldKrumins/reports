@@ -32,8 +32,15 @@ app.directive('components' ,['$rootScope','$timeout',function($rootScope,$timeou
               $timeout(function(){
                   scope.$apply(function(){
                       scope.selectall = !scope.selectall;
-                      $('.selected-item').toggleClass("fa-circle-o fa-dot-circle-o");
-                      scope.selectall ? $rootScope.$broadcast('select-all-buyers',scope.items) : $rootScope.$broadcast('deselect-all-buyers',scope.items);
+                      if(scope.selectall ){
+                          $('.selected-item').removeClass("fa-circle-o").addClass("fa-dot-circle-o");
+                          $rootScope.$broadcast('select-all-buyers',scope.items)
+                      }
+                      else{
+                          $('.selected-item').removeClass("fa-dot-circle-o").addClass("fa-circle-o");
+                          $rootScope.$broadcast('deselect-all-buyers',scope.items);
+                      }
+
                   });
 
               },0);

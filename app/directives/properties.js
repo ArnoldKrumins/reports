@@ -69,12 +69,20 @@ app.directive('properties',['$sce', function($sce){
 
             var self = this;
 
+            scope.test = function(){
+
+                console.log('hello');
+
+            }
+
+
+
             scope.$on("select-all-buyers", function (e ,items) {
 
                 scope.selecteditems = items;
 
                 scope.names  = _.reduce(_.map(scope.selecteditems, 'name'), function(result,name,key) {
-                    result[key] = "<span id=\'advertisers\' class=\'badge\'>" + name + '<a href="#" ng-click=""><i class="fa fa-times"></i></a></span>';
+                    result[key] = "<span id=\'advertisers\' class=\'badge\'>" + name + '<a href="#" click><i class="fa fa-times"></i></a></span>';
                     return result;
                 }, []).join("");
 
@@ -84,7 +92,7 @@ app.directive('properties',['$sce', function($sce){
             scope.$on("deselect-all-buyers", function (e ,items) {
                 scope.selecteditems = [];
                 scope.names  = _.reduce(_.map(scope.selecteditems, 'name'), function(result,name,key) {
-                    result[key] = "<span id=\'advertisers\' class=\'badge\'>" + name + '<a href="#" ng-click=""><i class="fa fa-times"></i></a></span>';
+                    result[key] = "<span id=\'advertisers\' class=\'badge\'>" + name + '<a href="#"><i class="fa fa-times"></i></a></span>';
                     return result;
                 }, []).join("");
             });
@@ -120,11 +128,11 @@ app.directive('properties',['$sce', function($sce){
 
 
                     scope.names  = _.reduce(_.map(scope.selecteditems, 'name'), function(result,name,key) {
-                            result[key] = "<span id=\'advertisers\' class=\'badge\'>" + name + '<a href="#" ng-click=""><i class="fa fa-times"></i></a></span>';
+                            result[key] = "<span class=\'badge\'>" + name + '</span>';
                         return result;
                     }, []).join("");
 
-                    self.explicitlyTrustedHtml = $sce.trustAsHtml('<p> scope.names </p>');
+                    self.explicitlyTrustedHtml = $sce.trustAsHtml('<p compile-template> scope.names </p>');
                 })
 
             });
@@ -132,3 +140,22 @@ app.directive('properties',['$sce', function($sce){
         }
     }
 }]);
+
+
+
+
+
+
+app.directive('compileTemplate', function($compile, $parse){
+    return {
+        link: function(scope, element, attr){
+            var parsed = $parse(attr.ngBindHtml);
+            function getStringValue() { return (parsed(scope) || '').toString(); }
+
+            //Recompile if the template changes
+            scope.$watch(getStringValue, function() {
+                $compile(element, null, -9999)(scope);  //The -9999 makes it skip directives so that we do not recompile ourselves
+            });
+        }
+    }
+});
