@@ -5,6 +5,7 @@ app.directive('categories',function(){
 
     return{
         restrict:'EA',
+//        require:'^container',
         scope:{categories:'=categories', approved:'=',rejected:'='},
         template:'\
             <h4>Automatic approval of advertiser categories</h4>\
@@ -17,7 +18,7 @@ app.directive('categories',function(){
                     <div class="category-search"><i class="fa fa-search"></i><input ng-model="searchText" type="search" class="form-control" placeholder="Search"></div>\
                         <ul>\
                             <li class="even"><div approve-reject-all approve="disableApproveAll" reject="disableRejectAll" ></div></li>\
-                            <li ng-repeat="category in categories  | filter:searchText" ng-class-odd="\'odd\'" ng-class-even="\'even\'"  >\
+                            <li ng-repeat="category in categories  | filter:searchText" ng-hide="category.Selected" ng-class-odd="\'odd\'" ng-class-even="\'even\'"  >\
                                <div category="category"></div>\
                             </li>\
                         </ul>\
@@ -36,7 +37,7 @@ app.directive('categories',function(){
                    <div approved-rejected-categories="rejected" key="reject" ></div>\
                 </tab>\
             </tabset>',
-        link:function(scope,__,__){
+        link:function(scope,__,__,ctrl){
 
 
             /* Event Listeners */

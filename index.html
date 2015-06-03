@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/site.css"/>
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css"/>
 
     <title>WO Programmatic Reports</title>
 </head>
@@ -16,6 +17,9 @@
 
 <div ng-controller="ReportController" ng-init="init()" class="container-fluid">
     <div class="row">
+
+        <div container selecteditems="selecteditems" names="selectednames" selected="selected" adcategories="categories" approvedcategories="approvedcategories" rejectedcategories="rejectedcategories" ></div>
+
         <div class="main col-sm-5 col-md-5 col-lg-7">
            <!--  <div publisers-list="publishers.SelectList"></div> -->
             <div publisher-list-two="publishers.data.SelectList"  fragment="htmlfragment" click="getPublisherValue()"></div>
@@ -27,6 +31,7 @@
             <div properties="selecteditems" names="selectednames" selected="selected" adcategories="categories" approvedcategories="approvedcategories" rejectedcategories="rejectedcategories"></div>
 
         </div>
+
     </div>
 </div>
 
@@ -38,9 +43,12 @@
 <script src="bower_components/gsap/src/minified/TweenMax.min.js"></script>
 <script src="bower_components/lodash/lodash.min.js"></script>
 <script src="js/ui-bootstrap-custom-tpls-0.13.0.min.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
 
-<script src="app/reports.js" ></script>
+<script src="app/reports.js"></script>
 <script src="app/services/fakeDataService.js"></script>
+<script src="app/services/notificationService.js"></script>
 <script src="app/controllers/ReportController.js"></script>
 <script src="app/directives/components.js"></script>
 <script src="app/directives/properties.js"></script>
@@ -52,5 +60,6 @@
 <script src="app/directives/category.js"></script>
 <script src="app/directives/approveRejectCategory.js"></script>
 <script src="app/directives/approveRejectAll.js"></script>
+<script src="app/directives/container.js"></script>
 
 </html>

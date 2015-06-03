@@ -4,8 +4,7 @@
 app.directive('components' ,['$rootScope','$timeout',function($rootScope,$timeout){
 
    return{
-     restrict:'EA',
-       replace:false,
+      restrict:'EA',
       scope:{ items:'=', selectall:'='},
       template:'\
       <button>{{ selectall ? \'Deselect All\' : \'Select All\' }}</button>\

@@ -1,4 +1,4 @@
-app.controller('ReportController',['$scope','fakeDataService' ,function($scope,fakeDataService){
+app.controller('ReportController',['$scope','fakeDataService','notificationService' ,function($scope,fakeDataService,notificationService){
 
     $scope.data = [];
     $scope.advertiserdata = [];
@@ -30,6 +30,8 @@ app.controller('ReportController',['$scope','fakeDataService' ,function($scope,f
         $scope.categories = _.forEach(fakeDataService.getCategories().data, function(o) {
             _.assign(o, { 'Selected': false });
         });
+
+        notificationService.success('title','message');
 
     }
 
