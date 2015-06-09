@@ -78,6 +78,7 @@ body{
 
 
 #wizard{
+  margin:20px 0;
 
   ul{
 
@@ -93,10 +94,12 @@ body{
       max-width: 50%;
       width: 50%;
     }
+
     li:first-child:before {
       max-width: 51%;
       left: 50%;
     }
+
     li.active:before,
     li.complete:before,
     li.active .step,
@@ -124,12 +127,12 @@ body{
 
 
     li.complete:hover .step {
-      -moz-transform: scale(1.1) !Important;
-      -webkit-transform: scale(1.1) !Important;
-      -o-transform: scale(1.1) !Important;
-      -ms-transform: scale(1.1) !Important;
-      transform: scale(1.1) !Important;
-      border-color: #80afd4 !Important;
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+      border-color: #80afd4;
     }
 
     li.complete:hover:before {
@@ -148,7 +151,7 @@ body{
     }
     li.complete .title,
     li.active .title {
-      color: rgb(223, 217, 217);
+      color: #030303;
     }
 
 
@@ -168,6 +171,7 @@ body{
       position: relative;
       top: 21px;
       z-index: 1;
+
     }
 
     li{
@@ -176,6 +180,7 @@ body{
 
       text-align: center;
       width: 1%;
+
 
       span.step{
         border: 5px solid #ced1d6;
@@ -190,6 +195,7 @@ body{
         height: 40px;
         line-height: 30px;
         text-align: center;
+
       }
       span.title{
         display: block;
