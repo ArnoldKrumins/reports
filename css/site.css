@@ -18,6 +18,61 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cedce7', endColorstr='#596a72', GradientType=0);
   /* IE6-8 */
 }
+#wizard ul {
+  list-style: none;
+  display: table;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+#wizard ul li:first-child:before {
+  max-width: 51%;
+  left: 50%;
+}
+#wizard ul li:before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  font-size: 0;
+  overflow: hidden;
+  border-top: 4px solid #CED1D6;
+  position: relative;
+  top: 21px;
+  z-index: 1;
+}
+#wizard ul li {
+  display: table-cell;
+  margin: 10px 60px 10px 0;
+  text-align: center;
+  width: 1%;
+}
+#wizard ul li span.step {
+  border: 5px solid #ced1d6;
+  color: #546474;
+  font-size: 15px;
+  border-radius: 100%;
+  background-color: #FFF;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  text-align: center;
+}
+#wizard ul li span.title {
+  display: block;
+  margin-top: 4px;
+  max-width: 100%;
+  color: #949ea7;
+  font-size: 14px;
+  z-index: 104;
+  text-align: center;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
 .main {
   color: #8b8686;
   margin-left: -28px;

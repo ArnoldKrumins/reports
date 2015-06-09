@@ -16,6 +16,9 @@
 <body ng-app="reports">
 
 <div ng-controller="ReportController" ng-init="init()" class="container-fluid">
+
+    <div wizard="steps"></div>
+
     <div class="row">
 
         <div container selecteditems="selecteditems" names="selectednames" selected="selected" adcategories="categories" approvedcategories="approvedcategories" rejectedcategories="rejectedcategories" ></div>
@@ -61,5 +64,6 @@
 <script src="app/directives/approveRejectCategory.js"></script>
 <script src="app/directives/approveRejectAll.js"></script>
 <script src="app/directives/container.js"></script>
+<script src="app/directives/wizard.js"></script>
 
 </html>

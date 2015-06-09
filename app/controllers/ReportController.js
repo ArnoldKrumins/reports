@@ -41,6 +41,13 @@ app.controller('ReportController',['$scope','fakeDataService','notificationServi
     }
 
 
+    $scope.steps = [
+        { step:1,description:'Step One', active:true},
+        { step:2,description:'Step Two', active:true},
+        { step:3,description:'Step Three', active:true},
+        { step:4,description:'Step Four', active:true}
+    ];
+
 
 }]);
 
