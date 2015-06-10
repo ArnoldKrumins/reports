@@ -41,12 +41,12 @@ app.controller('ReportController',['$scope','fakeDataService','notificationServi
     }
 
 
-    $scope.steps = [
-        { step:1,description:'Step One', active:true, selected:true, complete:false},
-        { step:2,description:'Step Two', active:true, selected:false, complete:false },
-        { step:3,description:'Step Three', active:true, selected:false, complete:false },
-        { step:4,description:'Step Four', active:true, selected:false, complete:false },
-        { step:5,description:'Step Five', active:true, selected:false, complete:false }
+       $scope.steps = [
+        { step:1,description:'TARGETING', active:true, selected:true, complete:false},
+        { step:2,description:'BIDS', active:true, selected:false, complete:false },
+        { step:3,description:'MATERIAL', active:true, selected:false, complete:false },
+        { step:4,description:'CAMPAIGN', active:true, selected:false, complete:false },
+        { step:5,description:'BUDGETS', active:true, selected:false, complete:false }
     ];
 
 

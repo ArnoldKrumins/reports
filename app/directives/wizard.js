@@ -19,7 +19,7 @@ app.directive('wizard',function(){
 
             scope.hit = function(index){
 
-                var stepCount = scope.steps.length;
+               //var stepCount = scope.steps.length;
 
                 angular.forEach(scope.steps,function(step){
 
