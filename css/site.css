@@ -63,14 +63,14 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  line-height: 30px;
+  line-height: 36px;
   text-align: center;
   border-radius: 100%;
   content: "\2713";
   background-color: #FFF;
   z-index: 3;
   font-family: FontAwesome;
-  font-size: 17px;
+  font-size: 22px;
   color: #87ba21;
 }
 #wizard ul li.complete:hover .step {
@@ -97,7 +97,7 @@ body {
 }
 #wizard ul li.complete .title,
 #wizard ul li.active .title {
-  color: #030303;
+  color: #949ea7;
 }
 #wizard ul li:first-child:before {
   max-width: 51%;
@@ -112,7 +112,7 @@ body {
   overflow: hidden;
   border-top: 4px solid #CED1D6;
   position: relative;
-  top: 21px;
+  top: 28px;
   z-index: 1;
 }
 #wizard ul li {
@@ -130,9 +130,9 @@ body {
   position: relative;
   z-index: 2;
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  line-height: 30px;
+  width: 50px;
+  height: 50px;
+  line-height: 40px;
   text-align: center;
 }
 #wizard ul li span.title {
@@ -145,6 +145,7 @@ body {
   text-align: center;
   table-layout: fixed;
   word-wrap: break-word;
+  font-weight: bold;
 }
 .main {
   color: #8b8686;
