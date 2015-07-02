@@ -18,6 +18,19 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cedce7', endColorstr='#596a72', GradientType=0);
   /* IE6-8 */
 }
+.banner-formats {
+  display: inline-block;
+}
+.banner-formats li {
+  list-style: none;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 0 12px 0 12px;
+  margin: 6px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #F2F2F2;
+}
 #wizard {
   margin: 20px 0;
 }
