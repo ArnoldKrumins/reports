@@ -7,22 +7,16 @@ app.directive('bannerFormats',function(){
         restrict:'EA',
         scope:{ bannerFormats:'=bannerFormats' },
         template:'<div>' +
-                    '<ul class="banner-formats" ng-repeat="(Width, langMovs) in banners">{{ Width }}' +
-                        '<li ng-repeat="mov in langMovs">{{ mov.Width.toString().concat(\'x\',mov.Height.toString())}}</li>' +
+                    '<ul class="banner-formats" ng-repeat="(Width, bannerInfo) in banners">{{ Width }}' +
+                        '<li ng-repeat="banner in bannerInfo | orderBy:[\'Width\',\'Height\']">{{ banner.Width.toString().concat(\'x\',banner.Height.toString())}}</li>' +
                     '</ul>' +
                 '</div>',
-        link:function(scope,element,attrs){
+        link:function(scope,__,__){
 
-
-            scope.banners = _.groupBy(scope.bannerFormats, 'Width');
-
-
-
-
+            scope.banners =  _.groupBy(scope.bannerFormats, function(banner) {
+                return this.floor(banner.Width/100.0)*100;
+            }, Math);
         }
-
-
-
     }
 
 })
