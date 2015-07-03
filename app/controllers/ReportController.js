@@ -1,4 +1,4 @@
-app.controller('ReportController',['$scope','fakeDataService','notificationService' ,function($scope,fakeDataService,notificationService){
+app.controller('ReportController',['$scope','$timeout','fakeDataService','notificationService' ,function($scope,$timeout,fakeDataService,notificationService){
 
     $scope.data = [];
     $scope.advertiserdata = [];
@@ -50,8 +50,10 @@ app.controller('ReportController',['$scope','fakeDataService','notificationServi
     ];
 
 
-    $scope.select = function(banner){
-        var s = banner;
+    $scope.select = function(value){
+
+     return null;
+
     }
 
     $scope.formats = [
