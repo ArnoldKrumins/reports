@@ -77,6 +77,7 @@ body{
 .banner-formats{
   display: inline-block;
   li{
+    position: relative;
     list-style: none;
     border: 1px solid lightgray;
     border-radius: 3px;
@@ -85,7 +86,56 @@ body{
     text-align: center;
     cursor: pointer;
     background-color: #F2F2F2;
+    min-width: 100px;
+    .shadow;
+
+    a:hover{
+        color: #ff0000;
+      text-decoration: none;
+    }
   }
+}
+
+.rtb-banner-formats{
+  display: inline-block;
+  li{
+    position: relative;
+    list-style: none;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 0 12px 0 12px;
+    margin: 6px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #F2F2F2;
+    min-width: 100px;
+    .shadow;
+    span{
+
+        input{
+          position: absolute;
+          left: 4px;
+          top: 0px;
+        }
+    }
+  }
+}
+
+
+.banner-header{
+  text-align: center;
+  font-size: 16px;
+  display: block;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.banner-selected{
+  background-color: #8fbc8f;
+}
+
+.banner-unselected{
+  background-color: #F2F2F2;
 }
 
 
