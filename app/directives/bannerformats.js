@@ -5,10 +5,12 @@ app.directive('bannerFormats',function($timeout){
 
     return{
         restrict:'EA',
-        scope:{ bannerFormats:'=bannerFormats', selectfunc:"&" },
+        scope:{ bannerFormats:'=bannerFormats', selectfunc:"&",selectedBanner:"=" },
         template:'<div>' +
             '<ul class="banner-formats" ng-repeat="(Width, bannerInfo) in banners"><span class="banner-header">{{ Width.toString().concat(\'+\') }} </span>' +
-            '<li ng-click="select(banner)" ng-class="{ \'bannerselected\': banner.Selected, \'bannerunselected\' : !banner.Selected }" ng-repeat="banner in bannerInfo | orderBy:[\'Width\',\'Height\']"><a href="#">{{ banner.Width.toString().concat(\'x\',banner.Height.toString(),banner.Selected)}}</a></li>' +
+            '<li  ng-click="select(banner,$index)" ng-repeat="banner in bannerInfo | orderBy:[\'Width\',\'Height\']">' +
+                '<div ng-class="{ \'bannerselected\': banner.PublisherBannerFormatId === selectedBanner }">{{ banner.Width.toString().concat(\'x\',banner.Height.toString())}}</div>' +
+            '</li>' +
             '</ul>' +
             '</div>',
         link:function(scope,element,__){
@@ -21,7 +23,7 @@ app.directive('bannerFormats',function($timeout){
 
                 $timeout(function(){
                     scope.$apply(function(){
-                        _.find(scope.bannerFormats, { 'PublisherBannerFormatId':value.PublisherBannerFormatId  }).Selected= !value.Selected;
+                        scope.selectedBanner = value.PublisherBannerFormatId;
                     })
                 },0)
             }

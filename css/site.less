@@ -80,8 +80,7 @@ body{
     position: relative;
     list-style: none;
     border: 1px solid lightgray;
-    border-radius: 3px;
-    padding: 0 12px 0 12px;
+    .border-radius(5px, 5px, 5px, 5px);
     margin: 6px;
     text-align: center;
     cursor: pointer;
@@ -89,9 +88,12 @@ body{
     min-width: 100px;
     .shadow;
 
-    a:hover{
+    div{
+      .border-radius(5px, 5px, 5px, 5px);
+      :hover{
         color: #ff0000;
-      text-decoration: none;
+        text-decoration: none;
+      }
     }
   }
 }
@@ -103,7 +105,6 @@ body{
     list-style: none;
     border: 1px solid lightgray;
     border-radius: 3px;
-    padding: 0 12px 0 12px;
     margin: 6px;
     text-align: center;
     cursor: pointer;
@@ -131,7 +132,8 @@ body{
 }
 
 .bannerselected{
-  background: #bc5b38;
+  background: #645E5C;
+  color:#f5f5f5;
 }
 
 .bannerunselected{
