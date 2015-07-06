@@ -79,8 +79,11 @@ body {
   background: #645E5C;
   color: #f5f5f5;
 }
-.bannerunselected {
-  background: #F2F2F2;
+.banner-disabled {
+  -webkit-opacity: 0.4;
+  -moz-opacity: 0.4;
+  opacity: 0.4;
+  cursor: default!important;
 }
 #wizard {
   margin: 20px 0;

@@ -36,8 +36,12 @@
         </div>
 
     </div>
-    <div banner-formats="formats" selectfunc="select(value)" selected-banner="selectedBanner"></div>
-    <div rtb-banner-formats="Rtbformats"></div>
+    <div banner-formats="banners" get-rtb-formats="getSelectedRtbBannerFormats(rtbBannersForBanner,bannerWidth)" selected-banner="selectedBanner"></div>
+
+    <div rtb-banner-formats-for-banner="rtbbanners"></div>
+
+    <div rtb-banner-formats="rtbAllbanners"></div>
+
 </div>
 
 
@@ -72,4 +76,5 @@
 <script src="app/directives/container.js"></script>
 <script src="app/directives/wizard.js"></script>
 <script src="app/directives/bannerformats.js"></script>
-<script src="app/directives/rtbformats.js"></script>
+<script src="app/directives/rtbBannerFormats.js"></script>
+<script src="app/directives/rtbBannerFormatsForBanner.js"></script>
