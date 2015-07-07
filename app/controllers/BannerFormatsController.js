@@ -20,7 +20,7 @@ app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$
 
     $scope.getBannerFormats = function(){
         $scope.banners = _.groupBy($scope.formats, function(banner) {
-            return this.floor(banner.Width/100.0)*100;
+           return this.floor(banner.Width/100.0)*100;
         }, Math);
     }
 
@@ -106,9 +106,9 @@ app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$
         {PublisherBannerFormatId:346,Width:270,Height:200,MinWidth:500,MinHeight:200,RtbFormats:[{Id:23,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
         {PublisherBannerFormatId:347,Width:280,Height:100,MinWidth:500,MinHeight:100,RtbFormats:[{Id:24,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
         {PublisherBannerFormatId:348,Width:325,Height:500,MinWidth:500,MinHeight:500,RtbFormats:[{Id:25,Width:300,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:349,Width:1000,Height:500,MinWidth:500,MinHeight:200,RtbFormats:[{Id:26,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:350,Width:1200,Height:600,MinWidth:500,MinHeight:100,RtbFormats:[{Id:27,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:351,Width:1200,Height:300,MinWidth:500,MinHeight:500,RtbFormats:[{Id:28,Width:300,Height:200,Enabled:true,UnsoldUrl:''}]}
+        {PublisherBannerFormatId:349,Width:1000,Height:500,MinWidth:1000,MinHeight:200,RtbFormats:[{Id:26,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
+        {PublisherBannerFormatId:350,Width:1200,Height:600,MinWidth:1000,MinHeight:100,RtbFormats:[{Id:27,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
+        {PublisherBannerFormatId:351,Width:1200,Height:300,MinWidth:1000,MinHeight:500,RtbFormats:[{Id:28,Width:300,Height:200,Enabled:true,UnsoldUrl:''}]}
     ];
 
 
@@ -169,7 +169,10 @@ app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$
         {"Id":40,"Width":320,"Height":320,"Enabled":true},
         {"Id":11,"Width":728,"Height":90,"Enabled":true},
         {"Id":31,"Width":750,"Height":100,"Enabled":false},
-        {"Id":15,"Width":750,"Height":200,"Enabled":true}
+        {"Id":32,"Width":1000,"Height":200,"Enabled":true},
+        {"Id":33,"Width":1000,"Height":90,"Enabled":true},
+        {"Id":34,"Width":1100,"Height":100,"Enabled":false},
+        {"Id":35,"Width":1100,"Height":200,"Enabled":true}
     ];
     //====================================================
     //BANNERS SECTION - END
