@@ -73,7 +73,7 @@ app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$
     $scope.formats = [
         {PublisherBannerFormatId:330,Width:200,Height:300,MinWidth:200,MinHeight:300,RtbFormats:[
             {Id:100,Width:200,Height:200,Enabled:true,UnsoldUrl:''},
-            {Id:101,Width:250,Height:250,Enabled:true,UnsoldUrl:''}
+            {Id:101,Width:88,Height:31,Enabled:true,UnsoldUrl:''}
         ]},
         {PublisherBannerFormatId:331,Width:200,Height:500,MinWidth:200,MinHeight:500,RtbFormats:[
             {Id:102,Width:120,Height:600,Enabled:true,UnsoldUrl:''},
@@ -88,25 +88,24 @@ app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$
             {Id:109,Width:160,Height:600,Enabled:true,UnsoldUrl:''},
             {Id:110,Width:120,Height:60,Enabled:true,UnsoldUrl:''}
         ]},
-        {PublisherBannerFormatId:333,Width:300,Height:200,MinWidth:300,MinHeight:200,RtbFormats:[{Id:13,Width:300,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:334,Width:400,Height:600,MinWidth:400,MinHeight:600,RtbFormats:[{Id:14,Width:400,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:335,Width:300,Height:700,MinWidth:300,MinHeight:700,RtbFormats:[{Id:15,Width:300,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:336,Width:300,Height:400,MinWidth:300,MinHeight:400,RtbFormats:[{Id:16,Width:300,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:337,Width:400,Height:200,MinWidth:400,MinHeight:200,RtbFormats:[{Id:17,Width:400,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:338,Width:400,Height:100,MinWidth:400,MinHeight:100,RtbFormats:[{Id:18,Width:400,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:339,Width:400,Height:900,MinWidth:400,MinHeight:900,RtbFormats:[{Id:19,Width:400,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:340,Width:500,Height:600,MinWidth:500,MinHeight:600,RtbFormats:[{Id:20,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:341,Width:500,Height:700,MinWidth:500,MinHeight:700,RtbFormats:[{Id:21,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:342,Width:200,Height:300,MinWidth:200,MinHeight:300,RtbFormats:[{Id:22,Width:200,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:343,Width:500,Height:200,MinWidth:500,MinHeight:200,RtbFormats:[{Id:23,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:344,Width:500,Height:100,MinWidth:500,MinHeight:100,RtbFormats:[{Id:24,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:345,Width:250,Height:500,MinWidth:500,MinHeight:500,RtbFormats:[{Id:25,Width:300,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:346,Width:270,Height:200,MinWidth:500,MinHeight:200,RtbFormats:[{Id:23,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:347,Width:280,Height:100,MinWidth:500,MinHeight:100,RtbFormats:[{Id:24,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:348,Width:325,Height:500,MinWidth:500,MinHeight:500,RtbFormats:[{Id:25,Width:300,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:349,Width:1000,Height:500,MinWidth:1000,MinHeight:200,RtbFormats:[{Id:26,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:350,Width:1200,Height:600,MinWidth:1000,MinHeight:100,RtbFormats:[{Id:27,Width:500,Height:200,Enabled:true,UnsoldUrl:''}]},
-        {PublisherBannerFormatId:351,Width:1200,Height:300,MinWidth:1000,MinHeight:500,RtbFormats:[{Id:28,Width:300,Height:200,Enabled:true,UnsoldUrl:''}]}
+        {PublisherBannerFormatId:333,Width:300,Height:200,MinWidth:300,MinHeight:200,RtbFormats:null},
+        {PublisherBannerFormatId:334,Width:400,Height:600,MinWidth:400,MinHeight:600,RtbFormats:[]},
+        {PublisherBannerFormatId:335,Width:300,Height:700,MinWidth:300,MinHeight:700,RtbFormats:[]},
+        {PublisherBannerFormatId:336,Width:300,Height:400,MinWidth:300,MinHeight:400,RtbFormats:[]},
+        {PublisherBannerFormatId:337,Width:400,Height:200,MinWidth:400,MinHeight:200,RtbFormats:[]},
+        {PublisherBannerFormatId:338,Width:400,Height:100,MinWidth:400,MinHeight:100,RtbFormats:[]},
+        {PublisherBannerFormatId:339,Width:400,Height:900,MinWidth:400,MinHeight:900,RtbFormats:[]},
+        {PublisherBannerFormatId:340,Width:500,Height:600,MinWidth:500,MinHeight:600,RtbFormats:[]},
+        {PublisherBannerFormatId:341,Width:500,Height:700,MinWidth:500,MinHeight:700,RtbFormats:[]},
+        {PublisherBannerFormatId:343,Width:500,Height:200,MinWidth:500,MinHeight:200,RtbFormats:[]},
+        {PublisherBannerFormatId:344,Width:500,Height:100,MinWidth:500,MinHeight:100,RtbFormats:[]},
+        {PublisherBannerFormatId:345,Width:250,Height:500,MinWidth:500,MinHeight:500,RtbFormats:[]},
+        {PublisherBannerFormatId:346,Width:270,Height:200,MinWidth:500,MinHeight:200,RtbFormats:[]},
+        {PublisherBannerFormatId:347,Width:280,Height:100,MinWidth:500,MinHeight:100,RtbFormats:[]},
+        {PublisherBannerFormatId:348,Width:325,Height:500,MinWidth:500,MinHeight:500,RtbFormats:[]},
+        {PublisherBannerFormatId:349,Width:1000,Height:500,MinWidth:1000,MinHeight:200,RtbFormats:[]},
+        {PublisherBannerFormatId:350,Width:1200,Height:600,MinWidth:1000,MinHeight:100,RtbFormats:[]},
+        {PublisherBannerFormatId:351,Width:1200,Height:300,MinWidth:1000,MinHeight:500,RtbFormats:[]}
     ];
 
 
