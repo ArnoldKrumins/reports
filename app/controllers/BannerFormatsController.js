@@ -1,7 +1,7 @@
 /**
  * Created by arnoldkrumins on 06/07/15.
  */
-app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$timeou){
+app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$timeout){
 
     $scope.init = function(){
 
@@ -49,12 +49,10 @@ app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$
 
                 if(banner.Width < bannerWidth && !banner.Enabled){
                     banner.Enabled = false;
-                    console.log(banner.Width.toString().concat(' - 1 -',bannerWidth));
                 }
 
                 if(banner.Width === rtbBanner.Width && banner.Height === rtbBanner.Height){
                     banner.Enabled = rtbBanner.Enabled;
-                    console.log(banner.Width.toString().concat(' - 2 - ',rtbBanner.Width));
                     return;
                 }
             });
@@ -177,5 +175,9 @@ app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$
     //====================================================
     //BANNERS SECTION - END
     //====================================================
+
+
+
+
 
 }]);

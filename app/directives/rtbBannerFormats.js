@@ -7,7 +7,7 @@ app.directive('rtbBannerFormats',function(){
         restrict:'EA',
         scope:{ bannerFormats:'=rtbBannerFormats' },
         template:'<div>' +
-                    '<ul class="rtb-banner-formats" ng-repeat="(Width, bannerInfo) in bannerFormats"><span class="banner-header">{{ Width.toString().concat(\'+\') }} </span>' +
+                    '<ul class="rtb-banner-formats" ng-repeat="bannerInfo in bannerFormats | toArray"><span class="banner-header">{{ bannerInfo.$key.concat(\'+\') }} </span>' +
                         '<li ng-repeat="banner in bannerInfo | orderBy:[\'Width\',\'Height\']">' +
                             '<span><input type="checkbox" ng-model="banner.Enabled" />{{ banner.Width.toString().concat(\'x\',banner.Height.toString())}}</span>' +
                         '</li>' +
