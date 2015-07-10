@@ -20,7 +20,7 @@ app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$
 
     $scope.getBannerFormats = function(){
         $scope.banners = _.groupBy($scope.formats, function(banner) {
-           return this.floor(banner.Width/100.0)*100;
+             return this.floor(banner.Width/100.0)*100;
         }, Math);
     }
 
@@ -69,7 +69,7 @@ app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$
 
 
 
-
+/*
     $scope.formats = [
         {PublisherBannerFormatId:330,Width:200,Height:300,MinWidth:200,MinHeight:300,RtbFormats:[
             {Id:100,Width:200,Height:200,Enabled:true,UnsoldUrl:''},
@@ -107,6 +107,492 @@ app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$
         {PublisherBannerFormatId:350,Width:1200,Height:600,MinWidth:1000,MinHeight:100,RtbFormats:[]},
         {PublisherBannerFormatId:351,Width:1200,Height:300,MinWidth:1000,MinHeight:500,RtbFormats:[]}
     ];
+*/
+
+    $scope.formats = [
+        {
+            "Id": 1268,
+            "PublisherBannerFormatId": 1516,
+            "Width": 10,
+            "Height": 30,
+            "MinWidth": null,
+            "MinHeight": null,
+            "RtbFormats": [],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1270,
+            "PublisherBannerFormatId": 1518,
+            "Width": 100,
+            "Height": 100,
+            "MinWidth": null,
+            "MinHeight": null,
+            "RtbFormats": [],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1271,
+            "PublisherBannerFormatId": 1519,
+            "Width": 140,
+            "Height": 140,
+            "MinWidth": null,
+            "MinHeight": null,
+            "RtbFormats": [],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 40,
+            "PublisherBannerFormatId": 1034,
+            "Width": 200,
+            "Height": 300,
+            "MinWidth": 200,
+            "MinHeight": 300,
+            "RtbFormats": [],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 118,
+            "PublisherBannerFormatId": 330,
+            "Width": 200,
+            "Height": 600,
+            "MinWidth": 120,
+            "MinHeight": 300,
+            "RtbFormats": [
+                {
+                    "Id": 10,
+                    "Width": 160,
+                    "Height": 600,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 15,
+            "PublisherBannerFormatId": 274,
+            "Width": 250,
+            "Height": 360,
+            "MinWidth": 250,
+            "MinHeight": 180,
+            "RtbFormats": [],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1169,
+            "PublisherBannerFormatId": 1417,
+            "Width": 250,
+            "Height": 600,
+            "MinWidth": 250,
+            "MinHeight": 250,
+            "RtbFormats": [
+                {
+                    "Id": 18,
+                    "Width": 250,
+                    "Height": 360,
+                    "Enabled": false
+                },
+                {
+                    "Id": 21,
+                    "Width": 250,
+                    "Height": 250,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1056,
+            "PublisherBannerFormatId": 1313,
+            "Width": 250,
+            "Height": 800,
+            "MinWidth": 250,
+            "MinHeight": 250,
+            "RtbFormats": [
+                {
+                    "Id": 18,
+                    "Width": 250,
+                    "Height": 360,
+                    "Enabled": false
+                },
+                {
+                    "Id": 21,
+                    "Width": 250,
+                    "Height": 250,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1059,
+            "PublisherBannerFormatId": 1316,
+            "Width": 300,
+            "Height": 60,
+            "MinWidth": 300,
+            "MinHeight": 50,
+            "RtbFormats": [
+                {
+                    "Id": 43,
+                    "Width": 300,
+                    "Height": 50,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1038,
+            "PublisherBannerFormatId": 1295,
+            "Width": 300,
+            "Height": 250,
+            "MinWidth": 300,
+            "MinHeight": 250,
+            "RtbFormats": [
+                {
+                    "Id": 5,
+                    "Width": 300,
+                    "Height": 250,
+                    "Enabled": false
+                },
+                {
+                    "Id": 21,
+                    "Width": 250,
+                    "Height": 250,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 915,
+            "PublisherBannerFormatId": 1136,
+            "Width": 320,
+            "Height": 60,
+            "MinWidth": 320,
+            "MinHeight": 50,
+            "RtbFormats": [
+                {
+                    "Id": 35,
+                    "Width": 320,
+                    "Height": 50,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 907,
+            "PublisherBannerFormatId": 1128,
+            "Width": 320,
+            "Height": 320,
+            "MinWidth": 300,
+            "MinHeight": 50,
+            "RtbFormats": [
+                {
+                    "Id": 5,
+                    "Width": 300,
+                    "Height": 250,
+                    "Enabled": false
+                },
+                {
+                    "Id": 35,
+                    "Width": 320,
+                    "Height": 50,
+                    "Enabled": false
+                },
+                {
+                    "Id": 40,
+                    "Width": 320,
+                    "Height": 320,
+                    "Enabled": false
+                },
+                {
+                    "Id": 44,
+                    "Width": 320,
+                    "Height": 80,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1054,
+            "PublisherBannerFormatId": 1311,
+            "Width": 320,
+            "Height": 480,
+            "MinWidth": 300,
+            "MinHeight": 50,
+            "RtbFormats": [
+                {
+                    "Id": 5,
+                    "Width": 300,
+                    "Height": 250,
+                    "Enabled": false
+                },
+                {
+                    "Id": 35,
+                    "Width": 320,
+                    "Height": 50,
+                    "Enabled": false
+                },
+                {
+                    "Id": 40,
+                    "Width": 320,
+                    "Height": 320,
+                    "Enabled": false
+                },
+                {
+                    "Id": 44,
+                    "Width": 320,
+                    "Height": 80,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 87,
+            "PublisherBannerFormatId": 290,
+            "Width": 468,
+            "Height": 220,
+            "MinWidth": 400,
+            "MinHeight": 60,
+            "RtbFormats": [
+                {
+                    "Id": 22,
+                    "Width": 467,
+                    "Height": 120,
+                    "Enabled": false
+                },
+                {
+                    "Id": 47,
+                    "Width": 468,
+                    "Height": 220,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 120,
+            "PublisherBannerFormatId": 332,
+            "Width": 468,
+            "Height": 240,
+            "MinWidth": 468,
+            "MinHeight": 200,
+            "RtbFormats": [
+                {
+                    "Id": 22,
+                    "Width": 467,
+                    "Height": 120,
+                    "Enabled": false
+                },
+                {
+                    "Id": 47,
+                    "Width": 468,
+                    "Height": 220,
+                    "Enabled": false
+                },
+                {
+                    "Id": 48,
+                    "Width": 468,
+                    "Height": 240,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1267,
+            "PublisherBannerFormatId": 1515,
+            "Width": 550,
+            "Height": 550,
+            "MinWidth": null,
+            "MinHeight": null,
+            "RtbFormats": [],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 559,
+            "PublisherBannerFormatId": 778,
+            "Width": 620,
+            "Height": 250,
+            "MinWidth": 468,
+            "MinHeight": 200,
+            "RtbFormats": [
+                {
+                    "Id": 47,
+                    "Width": 468,
+                    "Height": 220,
+                    "Enabled": false
+                },
+                {
+                    "Id": 48,
+                    "Width": 468,
+                    "Height": 240,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 131,
+            "PublisherBannerFormatId": 344,
+            "Width": 770,
+            "Height": 90,
+            "MinWidth": 728,
+            "MinHeight": 60,
+            "RtbFormats": [
+                {
+                    "Id": 11,
+                    "Width": 728,
+                    "Height": 90,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 8,
+            "PublisherBannerFormatId": 273,
+            "Width": 980,
+            "Height": 120,
+            "MinWidth": 980,
+            "MinHeight": 60,
+            "RtbFormats": [
+                {
+                    "Id": 19,
+                    "Width": 980,
+                    "Height": 120,
+                    "Enabled": false
+                },
+                {
+                    "Id": 25,
+                    "Width": 970,
+                    "Height": 100,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 560,
+            "PublisherBannerFormatId": 779,
+            "Width": 980,
+            "Height": 240,
+            "MinWidth": 980,
+            "MinHeight": 60,
+            "RtbFormats": [
+                {
+                    "Id": 13,
+                    "Width": 120,
+                    "Height": 60,
+                    "Enabled": false
+                },
+                {
+                    "Id": 41,
+                    "Width": 300,
+                    "Height": 60,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1055,
+            "PublisherBannerFormatId": 1312,
+            "Width": 980,
+            "Height": 600,
+            "MinWidth": 980,
+            "MinHeight": 600,
+            "RtbFormats": [
+                {
+                    "Id": 19,
+                    "Width": 980,
+                    "Height": 120,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1269,
+            "PublisherBannerFormatId": 1517,
+            "Width": 1010,
+            "Height": 1010,
+            "MinWidth": null,
+            "MinHeight": null,
+            "RtbFormats": [],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1057,
+            "PublisherBannerFormatId": 1314,
+            "Width": 1250,
+            "Height": 600,
+            "MinWidth": 980,
+            "MinHeight": 120,
+            "RtbFormats": [
+                {
+                    "Id": 19,
+                    "Width": 980,
+                    "Height": 120,
+                    "Enabled": false
+                },
+                {
+                    "Id": 28,
+                    "Width": 980,
+                    "Height": 240,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1058,
+            "PublisherBannerFormatId": 1315,
+            "Width": 1280,
+            "Height": 800,
+            "MinWidth": 980,
+            "MinHeight": 120,
+            "RtbFormats": [
+                {
+                    "Id": 19,
+                    "Width": 980,
+                    "Height": 120,
+                    "Enabled": false
+                },
+                {
+                    "Id": 28,
+                    "Width": 980,
+                    "Height": 240,
+                    "Enabled": false
+                }
+            ],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1266,
+            "PublisherBannerFormatId": 1514,
+            "Width": 1500,
+            "Height": 1500,
+            "MinWidth": null,
+            "MinHeight": null,
+            "RtbFormats": [],
+            "UnsoldUrl": ""
+        },
+        {
+            "Id": 1272,
+            "PublisherBannerFormatId": 1520,
+            "Width": 2000,
+            "Height": 2000,
+            "MinWidth": null,
+            "MinHeight": null,
+            "RtbFormats": [],
+            "UnsoldUrl": ""
+        }
+    ];
+
 
 
     $scope.Rtbformats =[

@@ -19,8 +19,6 @@ app.directive('rtbBannerFormatsForBanner',function(){
 
 
             scope.hasNoData = function(value){
-                //return angular.isUndefined(scope.selectedRtbBanners);
-                return angular.isUndefined(value) || value === null;
             }
 
         }
