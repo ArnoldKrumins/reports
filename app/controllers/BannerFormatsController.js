@@ -26,7 +26,9 @@ app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$
 
     $scope.getRtbBannerFormats = function(){
 
-        $scope.rtbbanners = _.groupBy(_.forEach(_.filter($scope.Rtbformats, { 'Enabled': true }),function(banner){ banner.Enabled = null }), function(banner) {
+        $scope.rtbbanners = _.groupBy(
+                               _.forEach(
+                                   _.filter($scope.Rtbformats, { 'Enabled': true }),function(banner){ _.assign(banner, { 'Available': null }); }), function(banner) {
             return this.floor(banner.Width/100.0)*100;
         }, Math);
     }
@@ -66,48 +68,6 @@ app.controller('BannerFormatsController',['$scope','$timeout' ,function($scope,$
 
     }
 
-
-
-
-/*
-    $scope.formats = [
-        {PublisherBannerFormatId:330,Width:200,Height:300,MinWidth:200,MinHeight:300,RtbFormats:[
-            {Id:100,Width:200,Height:200,Enabled:true,UnsoldUrl:''},
-            {Id:101,Width:88,Height:31,Enabled:true,UnsoldUrl:''}
-        ]},
-        {PublisherBannerFormatId:331,Width:200,Height:500,MinWidth:200,MinHeight:500,RtbFormats:[
-            {Id:102,Width:120,Height:600,Enabled:true,UnsoldUrl:''},
-            {Id:103,Width:120,Height:60,Enabled:true,UnsoldUrl:''},
-            {Id:104,Width:88,Height:31,Enabled:true,UnsoldUrl:''}
-        ]},
-        {PublisherBannerFormatId:332,Width:325,Height:500,MinWidth:200,MinHeight:100,RtbFormats:[
-            {Id:105,Width:300,Height:1050,Enabled:true,UnsoldUrl:''},
-            {Id:106,Width:300,Height:50,Enabled:true,UnsoldUrl:''},
-            {Id:107,Width:250,Height:800,Enabled:true,UnsoldUrl:''},
-            {Id:108,Width:250,Height:250,Enabled:true,UnsoldUrl:''},
-            {Id:109,Width:160,Height:600,Enabled:true,UnsoldUrl:''},
-            {Id:110,Width:120,Height:60,Enabled:true,UnsoldUrl:''}
-        ]},
-        {PublisherBannerFormatId:333,Width:300,Height:200,MinWidth:300,MinHeight:200,RtbFormats:null},
-        {PublisherBannerFormatId:334,Width:400,Height:600,MinWidth:400,MinHeight:600,RtbFormats:[]},
-        {PublisherBannerFormatId:335,Width:300,Height:700,MinWidth:300,MinHeight:700,RtbFormats:[]},
-        {PublisherBannerFormatId:336,Width:300,Height:400,MinWidth:300,MinHeight:400,RtbFormats:[]},
-        {PublisherBannerFormatId:337,Width:400,Height:200,MinWidth:400,MinHeight:200,RtbFormats:[]},
-        {PublisherBannerFormatId:338,Width:400,Height:100,MinWidth:400,MinHeight:100,RtbFormats:[]},
-        {PublisherBannerFormatId:339,Width:400,Height:900,MinWidth:400,MinHeight:900,RtbFormats:[]},
-        {PublisherBannerFormatId:340,Width:500,Height:600,MinWidth:500,MinHeight:600,RtbFormats:[]},
-        {PublisherBannerFormatId:341,Width:500,Height:700,MinWidth:500,MinHeight:700,RtbFormats:[]},
-        {PublisherBannerFormatId:343,Width:500,Height:200,MinWidth:500,MinHeight:200,RtbFormats:[]},
-        {PublisherBannerFormatId:344,Width:500,Height:100,MinWidth:500,MinHeight:100,RtbFormats:[]},
-        {PublisherBannerFormatId:345,Width:250,Height:500,MinWidth:500,MinHeight:500,RtbFormats:[]},
-        {PublisherBannerFormatId:346,Width:270,Height:200,MinWidth:500,MinHeight:200,RtbFormats:[]},
-        {PublisherBannerFormatId:347,Width:280,Height:100,MinWidth:500,MinHeight:100,RtbFormats:[]},
-        {PublisherBannerFormatId:348,Width:325,Height:500,MinWidth:500,MinHeight:500,RtbFormats:[]},
-        {PublisherBannerFormatId:349,Width:1000,Height:500,MinWidth:1000,MinHeight:200,RtbFormats:[]},
-        {PublisherBannerFormatId:350,Width:1200,Height:600,MinWidth:1000,MinHeight:100,RtbFormats:[]},
-        {PublisherBannerFormatId:351,Width:1200,Height:300,MinWidth:1000,MinHeight:500,RtbFormats:[]}
-    ];
-*/
 
     $scope.formats = [
         {
