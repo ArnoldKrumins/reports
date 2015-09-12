@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/site.css"/>
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css"/>
+    <title>Forecasting</title>
+</head>
+<body  ng-app="reports">
+
+<div  ng-controller="ForecastController" ng-init="init()" class="container-fluid">
+
+    <div class="row">
+        <div class="forecast-paramters col-sm-3 col-md-3 col-lg-3"></div>
+        <div class="forecast-data-view col-sm-9 col-md-9 col-lg-9">
+            <div forecast-calendar="forecastData"/>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js" ></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-toArrayFilter/toArrayFilter.js"></script>
+<script src="bower_components/gsap/src/minified/TweenMax.min.js"></script>
+<script src="bower_components/lodash/lodash.min.js"></script>
+<script src="js/ui-bootstrap-custom-tpls-0.13.0.min.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+
+<script src="app/reports.js"></script>
+<script src="app/services/forcastingDataService.js"></script>
+<script src="app/controllers/ForcastingController.js"></script>
+<script src="app/directives/forecastCalendar.js"></script>
+
+
+
+</html>
