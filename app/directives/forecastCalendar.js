@@ -13,13 +13,20 @@ app.directive('forecastCalendar',function(){
                           '<div>' +
                             '<h5>{{ forecast.Date  }}</h5>' +
                             '<h1>{{ forecast.Day  }}</h1>' +
-                            '<p>{{ parseInt(forecast.avails,10) }}</p>' +
+                            '<div class="f-data">' +
+                               '<p>{{ formatNumber(forecast.avails) }}</p>' +
+                                '<p>{{ formatNumber(forecast.sold) }}</p>' +
+                                '<p>{{ formatNumber(forecast.revenue) }}</p>' +
+                            '</div>' +
                             '</div>' +
                         '</li>' +
                     '</ul>',
         link:function(scope,element,attrs){
 
+            scope.formatNumber = function(value){
+                return parseInt(value);
 
+            }
 
 
         }

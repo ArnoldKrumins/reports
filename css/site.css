@@ -21,7 +21,7 @@ body {
 .forecast-data-view ul li {
   display: inline-block;
 }
-.forecast-data-view ul li div {
+.forecast-data-view ul li > div {
   position: relative;
   width: 240px;
   height: 120px;
@@ -36,11 +36,11 @@ body {
   -moz-box-shadow: 5px 5px 18px -3px #5f5d5d;
   box-shadow: 5px 5px 18px -3px #5f5d5d;
 }
-.forecast-data-view ul li div h5 {
+.forecast-data-view ul li > div h5 {
   position: absolute;
   top: -4px;
 }
-.forecast-data-view ul li div h1 {
+.forecast-data-view ul li > div h1 {
   font-size: 65px;
   float: right;
   margin: 10px 10px 0;
@@ -48,6 +48,13 @@ body {
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5;
+}
+.forecast-data-view ul li > div div.f-data {
+  margin: 25px 0 0 16px;
+  font-size: 12px;
+}
+.forecast-data-view ul li > div div.f-data p {
+  margin-bottom: 0;
 }
 .banner-formats {
   display: inline-block;
