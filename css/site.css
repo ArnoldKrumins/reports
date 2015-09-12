@@ -18,6 +18,37 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cedce7', endColorstr='#596a72', GradientType=0);
   /* IE6-8 */
 }
+.forecast-data-view ul li {
+  display: inline-block;
+}
+.forecast-data-view ul li div {
+  position: relative;
+  width: 240px;
+  height: 120px;
+  margin: 10px;
+  padding: 10px;
+  border: solid gray 1px;
+  background-color: gainsboro;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+  -webkit-box-shadow: 5px 5px 18px -3px #5f5d5d;
+  -moz-box-shadow: 5px 5px 18px -3px #5f5d5d;
+  box-shadow: 5px 5px 18px -3px #5f5d5d;
+}
+.forecast-data-view ul li div h5 {
+  position: absolute;
+  top: -4px;
+}
+.forecast-data-view ul li div h1 {
+  font-size: 65px;
+  float: right;
+  margin: 10px 10px 0;
+  color: #1575A2;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
 .banner-formats {
   display: inline-block;
 }
