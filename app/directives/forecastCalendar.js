@@ -14,9 +14,9 @@ app.directive('forecastCalendar',function(){
                             '<h5>{{ forecast.Date  }}</h5>' +
                             '<h1>{{ forecast.Day  }}</h1>' +
                             '<div class="f-data">' +
-                               '<p>{{ formatNumber(forecast.avails) }}</p>' +
-                                '<p>{{ formatNumber(forecast.sold) }}</p>' +
-                                '<p>{{ formatNumber(forecast.revenue) }}</p>' +
+                               '<p>{{ formatNumber(forecast.avails).toString().concat(\'&nbsp;K\') }}</p>' +
+                                '<p>{{ formatNumber(forecast.sold).toString().concat(\'&nbsp;K\') }}</p>' +
+                                '<p>{{ forecast.revenue | currency }}</p>' +
                             '</div>' +
                             '</div>' +
                         '</li>' +
