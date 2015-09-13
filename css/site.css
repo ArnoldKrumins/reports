@@ -73,6 +73,20 @@ body {
 .forecast-data-view .bad {
   background-color: #ff647a;
 }
+.forecast-paramters {
+  margin-top: 10px;
+  position: relative;
+  left: 30px;
+  height: 600px;
+  border: solid gray 1px;
+  background-color: gainsboro;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+  -webkit-box-shadow: 5px 5px 18px -3px #5f5d5d;
+  -moz-box-shadow: 5px 5px 18px -3px #5f5d5d;
+  box-shadow: 5px 5px 18px -3px #5f5d5d;
+}
 .banner-formats {
   display: inline-block;
 }
