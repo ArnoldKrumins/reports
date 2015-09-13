@@ -56,6 +56,15 @@ body {
 .forecast-data-view ul li > div div.f-data p {
   margin-bottom: 0;
 }
+.forecast-data-view ul li > div div.f-indicator {
+  width: 100%;
+  margin: 5px 0px;
+  height: 15px;
+  background-color: #ff647a;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
 .banner-formats {
   display: inline-block;
 }

@@ -18,6 +18,7 @@ app.directive('forecastCalendar',function(){
                                 '<p>{{ formatNumber(forecast.sold).toString().concat(\'&nbsp;K\') }}</p>' +
                                 '<p>{{ forecast.revenue | currency }}</p>' +
                             '</div>' +
+                            '<div class="f-indicator"></div>' +
                             '</div>' +
                         '</li>' +
                     '</ul>',
@@ -25,7 +26,6 @@ app.directive('forecastCalendar',function(){
 
             scope.formatNumber = function(value){
                 return parseInt(value);
-
             }
 
 
