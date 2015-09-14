@@ -5,6 +5,27 @@ app.controller('ForecastController',['$scope','$timeout','forecastingDataService
 
 $scope.forecastData = [];
 
+$scope.forecast = {
+    sDate: "2015-05-04 00:00:00",
+    eDate: "2015-06-15 00:00:00",
+
+
+}
+
+
+$scope.months = function(sDate,eDate){
+
+    var d1 = new Date(sDate);
+    var d2 = new Date(eDate);
+    var y1=d1.getFullYear();
+    var y2=d2.getFullYear();
+    var m1=d1.getMonth();
+    var m2=d2.getMonth();
+
+    return (y2 - y1) * 12 + (m2 - m1) + 1;
+
+}
+
 
     var weekday = new Array(7);
     weekday[0]=  "Sunday";
@@ -15,9 +36,29 @@ $scope.forecastData = [];
     weekday[5] = "Friday";
     weekday[6] = "Saturday";
 
-$scope.init = function(){
+    var monthName = new Array(11);
+    monthName[0]=  "Jan";
+    monthName[1] = "Feb";
+    monthName[2] = "March";
+    monthName[3] = "Apr";
+    monthName[4] = "May";
+    monthName[5] = "June";
+    monthName[6] = "July";
+    monthName[7] = "Aug";
+    monthName[8] = "Sept";
+    monthName[9] = "Oct";
+    monthName[10] = "Nov";
+    monthName[11] = "Dec";
+
+
+
+
+    $scope.init = function(){
 
     $scope.get();
+    var monthsCount = $scope.months($scope.forecast.sDate,$scope.forecast.eDate);
+
+
 }
 
 
@@ -29,9 +70,14 @@ $scope.get = function(){
             var d = new Date(fd.group);
             _.assign(fd, { 'Date': d.toDateString() });
             _.assign(fd, { 'Day': d.getDate() });
+            _.assign(fd, { 'Month': d.getMonth() });
+            _.assign(fd, { 'Year': d.getFullYear() });
+            _.assign(fd, { 'MonthName': monthName[d.getMonth()] });
 
         })
-        $scope.forecastData = data.Datas;
+      /*  $scope.forecastData = _.groupBy(data.Datas,function(d){
+            return d.Month;
+        })*/
 
     },4);
 

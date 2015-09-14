@@ -9,7 +9,7 @@ app.directive('forecastCalendar',function(){
         scope:{ forecastData:'=forecastCalendar'},
         template: '<ul>' +
                         '<li ng-repeat="forecast in forecastData">' +
-                          '<div>' +
+                          '<div> {{ create(); }}' +
                             '<h5><span class="f-day">{{ forecast.Date.toString().substr(0,3) }}</span><span class="f-date-part">{{ forecast.Date.substr(3,forecast.Date.length) }}</span></h5>' +
                             '<h1>{{ forecast.Day  }}</h1>' +
                             '<div class="f-data">' +
@@ -22,6 +22,18 @@ app.directive('forecastCalendar',function(){
                         '</li>' +
                     '</ul>',
         link:function(scope,element,attrs){
+
+            scope.create = function(){
+
+                var cal = new Calendar();               // weeks start on Monday by default
+                var m = cal.monthDates(2015,8,            // January is 0 in JS Date
+                    function(d) {return (' '+d.getDate()).slice(-2)}
+                    //function(w) {return w.join(' | ')}
+                );
+
+                console.log(m);
+            }
+
 
             scope.formatNumber = function(value){
                 return parseInt(value);
