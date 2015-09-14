@@ -10,7 +10,7 @@ app.directive('forecastCalendar',function(){
         template: '<ul>' +
                         '<li ng-repeat="forecast in forecastData">' +
                           '<div>' +
-                            '<h5>{{ forecast.Date  }}</h5>' +
+                            '<h5><span class="f-day">{{ forecast.Date.toString().substr(0,3) }}</span><span class="f-date-part">{{ forecast.Date.substr(3,forecast.Date.length) }}</span></h5>' +
                             '<h1>{{ forecast.Day  }}</h1>' +
                             '<div class="f-data">' +
                                '<p>{{ formatNumber(forecast.avails).toString().concat(\'&nbsp;K\') }}</p>' +
@@ -31,12 +31,7 @@ app.directive('forecastCalendar',function(){
                 return parseInt(((parseInt(sold) / parseInt(avails)) * 100));
             }
 
-            scope.statusClass = function(avails,sold){
-                var val = parseInt(((parseInt(sold) / parseInt(avails)) * 100));
 
-                if(val >=40) return true;
-                if(val <40) return false;
-            }
         }
 
 
