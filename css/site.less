@@ -76,6 +76,71 @@ body{
   text-shadow: @string;
 }
 
+.forecast-data-view-swipe{
+
+  ul{
+
+    li{
+      display: inline-block;
+      > div{
+        position: relative;
+        width:210px;
+        height:120px;
+        margin:10px;
+        padding:10px;
+        border: solid #CECBCB 1px;
+        background-color: gainsboro;
+        .border-radius(2px,2px,2px,2px);
+
+        h5{
+          position: absolute;
+          top: -4px;
+        }
+
+        h1{
+          font-size: 65px;
+          float: right;
+          margin: 10px 10px 0;
+          color: #1575A2;
+          .opacity(0.5);
+        }
+
+        div.f-data{
+          margin: 22px 0 0 4px;
+          font-size: 12px;
+          p{
+            margin-bottom: 0;
+          }
+        }
+
+
+      }
+    }
+  }
+
+
+  .f-indicator{
+    width: 100%;
+    margin: 12px 0px;
+    height:15px;
+    .opacity(0.5);
+  }
+
+  .good{
+    background-color: #30BF4F;
+  }
+
+  .ok{
+    background-color: #99AB0A;
+  }
+
+  .bad{
+    background-color: #ff647a;
+  }
+
+}
+
+
 .forecast-data-view{
 
   ul{

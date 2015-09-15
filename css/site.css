@@ -12,6 +12,58 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 ); /!* IE6-8 *!/
 */
 }
+.forecast-data-view-swipe ul li {
+  display: inline-block;
+}
+.forecast-data-view-swipe ul li > div {
+  position: relative;
+  width: 210px;
+  height: 120px;
+  margin: 10px;
+  padding: 10px;
+  border: solid #CECBCB 1px;
+  background-color: gainsboro;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+}
+.forecast-data-view-swipe ul li > div h5 {
+  position: absolute;
+  top: -4px;
+}
+.forecast-data-view-swipe ul li > div h1 {
+  font-size: 65px;
+  float: right;
+  margin: 10px 10px 0;
+  color: #1575A2;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+.forecast-data-view-swipe ul li > div div.f-data {
+  margin: 22px 0 0 4px;
+  font-size: 12px;
+}
+.forecast-data-view-swipe ul li > div div.f-data p {
+  margin-bottom: 0;
+}
+.forecast-data-view-swipe .f-indicator {
+  width: 100%;
+  margin: 12px 0px;
+  height: 15px;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+.forecast-data-view-swipe .good {
+  background-color: #30BF4F;
+}
+.forecast-data-view-swipe .ok {
+  background-color: #99AB0A;
+}
+.forecast-data-view-swipe .bad {
+  background-color: #ff647a;
+}
 .forecast-data-view ul li {
   display: inline-block;
 }

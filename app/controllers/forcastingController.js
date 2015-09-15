@@ -3,12 +3,17 @@
  */
 app.controller('ForecastController',['$scope','$timeout','forecastingDataService' ,function($scope,$timeout,forecastingDataService){
 
-$scope.forecastData = [];
+$scope.forecastData =[];
+$scope.forecastDataGrouped = {};
+$scope.calendar = [];
 
 $scope.forecast = {
     sDate: "2015-05-04 00:00:00",
     eDate: "2015-06-15 00:00:00",
-
+    range:[
+        {year:2015, month:5},
+        {year:2015, month:6}
+    ]
 
 }
 
@@ -75,9 +80,29 @@ $scope.get = function(){
             _.assign(fd, { 'MonthName': monthName[d.getMonth()] });
 
         })
-      /*  $scope.forecastData = _.groupBy(data.Datas,function(d){
-            return d.Month;
-        })*/
+
+        var cal = new Calendar();
+        _.forEach($scope.forecast.range,function(range){
+
+            var cdata = cal.monthDates(range.year,range.month,function(d){
+                return {
+                    Date: d.toDateString(),
+                    Day: d.getDate(),
+                }
+            });
+
+            $scope.calendar.push(
+                {
+                    MonthName: monthName[range.month],
+                    Year: range.year,
+                    weeks: cdata
+                }
+            );
+
+
+        });
+
+
 
     },4);
 

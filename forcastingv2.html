@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/site.css"/>
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css"/>
+    <link rel="stylesheet" href="bower_components/Swiper/dist/css/swiper.min.css"/>
+    <title>Forecasting Version 2</title>
+
+
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#000;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+    </style>
+
+
+</head>
+<body  ng-app="reports">
+
+<div  ng-controller="ForecastController" ng-init="init()" class="container-fluid">
+
+    <div class="row">
+        <div class="forecast-paramters col-sm-2 col-md-2 col-lg-2">
+
+        </div>
+        <div class="forecast-data-view-swipe col-sm-10 col-md-10 col-lg-10">
+            <div forecast-calendar-multi="calendar"/>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js" ></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-toArrayFilter/toArrayFilter.js"></script>
+<script src="bower_components/gsap/src/minified/TweenMax.min.js"></script>
+<script src="bower_components/lodash/lodash.min.js"></script>
+<script src="js/ui-bootstrap-custom-tpls-0.13.0.min.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+<script src="bower_components/Swiper/dist/js/swiper.min.js"></script>
+<script src="js/calendar.js"></script>
+
+<script src="app/reports.js"></script>
+<script src="app/services/forcastingDataService.js"></script>
+<script src="app/controllers/forcastingController.js"></script>
+<script src="app/directives/endRepeat.js"></script>
+<script src="app/directives/forecastCalenderMulti.js"></script>
+
+
+
+</html>
