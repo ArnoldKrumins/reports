@@ -4,7 +4,7 @@
 app.directive('forecastCalendar',function(){
 
     return{
-        resrict:'EA',
+        restrict:'EA',
         replace:true,
         scope:{ forecastData:'=forecastCalendar'},
         template: '<ul>' +
@@ -45,8 +45,6 @@ app.directive('forecastCalendar',function(){
 
 
         }
-
-
 
     }
 
