@@ -12,13 +12,24 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 ); /!* IE6-8 *!/
 */
 }
+.calendar-header {
+  width: 100%;
+}
+.calendar-header ul.calendar-days li div {
+  width: 150px;
+  margin: 10px;
+  padding: 10px;
+}
+.calendar-header ul.calendar-days li div span {
+  text-align: center;
+}
 .forecast-data-view-swipe ul li {
   display: inline-block;
 }
-.forecast-data-view-swipe ul li > div {
+.forecast-data-view-swipe ul li div.f-day-container {
   position: relative;
-  width: 210px;
-  height: 120px;
+  width: 150px;
+  height: 80px;
   margin: 10px;
   padding: 10px;
   border: solid #CECBCB 1px;
@@ -27,30 +38,30 @@ body {
   -moz-border-radius: 2px 2px 2px 2px;
   border-radius: 2px 2px 2px 2px;
 }
-.forecast-data-view-swipe ul li > div h5 {
+.forecast-data-view-swipe ul li div.f-day-container h5 {
   position: absolute;
   top: -4px;
 }
-.forecast-data-view-swipe ul li > div h1 {
-  font-size: 65px;
+.forecast-data-view-swipe ul li div.f-day-container h1 {
+  font-size: 50px;
   float: right;
-  margin: 10px 10px 0;
+  margin: -5px 2px 0;
   color: #1575A2;
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5;
 }
-.forecast-data-view-swipe ul li > div div.f-data {
-  margin: 22px 0 0 4px;
-  font-size: 12px;
+.forecast-data-view-swipe ul li div.f-day-container div.f-data {
+  margin: 3px 0 6px -44px;
+  font-size: 10px;
 }
-.forecast-data-view-swipe ul li > div div.f-data p {
+.forecast-data-view-swipe ul li div.f-day-container div.f-data p {
   margin-bottom: 0;
 }
 .forecast-data-view-swipe .f-indicator {
   width: 100%;
-  margin: 12px 0px;
-  height: 15px;
+  margin: 0px 0 8px 0px;
+  height: 12px;
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5;

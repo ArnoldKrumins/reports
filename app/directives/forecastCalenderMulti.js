@@ -9,14 +9,26 @@ app.directive('forecastCalendarMulti',function(){
         template:'<div class="swiper-container">' +
                     '<div class="swiper-wrapper">' +
                         '<div ng-repeat="month in calendarData" class="swiper-slide" end-repeat>' +
-                            '<div><h4>{{ month.MonthName.toString().concat(\'&nbsp\',month.Year) }}</h4></div>' +
-                            '<div>' +
+
+                            '<div class="calendar-header">' +
+                                '<div><h4>{{ month.MonthName.toString().concat(\'&nbsp\',month.Year) }}</h4></div>' +
+                                '<ul class="calendar-days">' +
+                                    '<li><div><span>SUN</span></div></li>' +
+                                    '<li><div><span>MON</span></div></li>' +
+                                    '<li><div><span>TUE</span></div></li>' +
+                                    '<li><div><span>WED</span></div></li>' +
+                                    '<li><div><span>THUR</span></div></li>' +
+                                    '<li><div><span>FRI</span></div></li>' +
+                                    '<li><div><span>SAT</span></div></li>' +
+                                '</ul>' +
+
                                 '<ul>' +
                                     '<li ng-repeat="week in month.weeks">' +
-                                        '<ul>' +
+
+                                        '<ul style="margin-left: -120px;">' +
                                             '<li ng-repeat="day in week">' +
-                                            '<div>' +
-                                                '<h5><span class="f-day">{{ day.Date.toString().substr(0,3) }}</span><span class="f-date-part">{{ day.Date.substr(3,forecast.Date.length) }}</span></h5>' +
+                                            '<div class="f-day-container">' +
+
                                                 '<h1>{{ day.Day  }}</h1>' +
                                                     '<div class="f-data">' +
                                                         '<p>N/A</p>' +
