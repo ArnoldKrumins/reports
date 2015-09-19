@@ -16,6 +16,8 @@ body {
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5;
+  background-color: #81BBBB!important;
+  border: solid #AFD1D4 1px!important;
 }
 .swiper-wrapper ul {
   margin: 0;
@@ -50,8 +52,8 @@ body {
   height: 60px;
   margin: 2px 5px;
   padding: 10px;
-  border: solid #B1BCBD 1px;
-  background-color: #E6EAEA;
+  border: solid #AFD1D4 1px;
+  background-color: #CCEAF9;
   -webkit-border-radius: 2px 2px 2px 2px;
   -moz-border-radius: 2px 2px 2px 2px;
   border-radius: 2px 2px 2px 2px;
@@ -71,11 +73,11 @@ body {
 }
 .forecast-data-view-swipe ul li div.f-day-container div.f-data {
   position: absolute;
-  top: 13px;
+  top: 10px;
   font-size: 10px;
 }
 .forecast-data-view-swipe ul li div.f-day-container div.f-data p {
-  margin-bottom: 0;
+  margin: -3px 0 0px;
 }
 .forecast-data-view-swipe .f-indicator {
   width: 112px;
