@@ -6,12 +6,12 @@ app.directive('forecastCalendarMulti',function(){
     return{
         restrict:'EA',
         scope:{ calendarData:'=forecastCalendarMulti' },
-        template:'<div class="swiper-container">' +
-                    '<div class="swiper-wrapper">' +
+        template:'<div class="swiper-container col-sm-6 col-md-6 col-lg-6">' +
+                    '<div class="swiper-wrapper" style="margin-bottom: 30px;">' +
                         '<div ng-repeat="month in calendarData" class="swiper-slide" end-repeat>' +
 
                             '<div class="calendar-header">' +
-                                '<div><h4>{{ month.MonthName.toString().concat(\'&nbsp\',month.Year) }}</h4></div>' +
+                                '<div><h2 style="margin-bottom: -10px;">{{ month.MonthName.toString().concat(\'&nbsp\',month.Year) }}</h2></div>' +
                                 '<ul class="calendar-days">' +
                                     '<li><div><span>SUN</span></div></li>' +
                                     '<li><div><span>MON</span></div></li>' +
@@ -25,7 +25,7 @@ app.directive('forecastCalendarMulti',function(){
                                 '<ul>' +
                                     '<li ng-repeat="week in month.weeks">' +
 
-                                        '<ul style="margin-left: -120px;">' +
+                                        '<ul>' +
                                             '<li ng-repeat="day in week">' +
                                             '<div class="f-day-container">' +
 
