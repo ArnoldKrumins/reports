@@ -52,8 +52,8 @@ body {
   height: 60px;
   margin: 2px 5px;
   padding: 10px;
-  border: solid #AFD1D4 1px;
-  background-color: #CCEAF9;
+  border: solid #AFBDCC 1px;
+  background-color: #F0F0F1;
   -webkit-border-radius: 2px 2px 2px 2px;
   -moz-border-radius: 2px 2px 2px 2px;
   border-radius: 2px 2px 2px 2px;
@@ -63,9 +63,9 @@ body {
   top: -4px;
 }
 .forecast-data-view-swipe ul li div.f-day-container h1 {
-  font-size: 36px;
+  font-size: 25px;
   float: right;
-  margin: -5px 2px 0;
+  margin: -8px -4px 0;
   color: #1575A2;
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
