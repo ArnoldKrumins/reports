@@ -29,7 +29,7 @@ body {
   width: 100%;
 }
 .calendar-header ul.calendar-days li div {
-  width: 140px;
+  width: 120px;
   margin: 2px 5px;
   padding: 10px;
   border-bottom-width: 3px;
@@ -46,8 +46,8 @@ body {
 }
 .forecast-data-view-swipe ul li div.f-day-container {
   position: relative;
-  width: 140px;
-  height: 80px;
+  width: 120px;
+  height: 60px;
   margin: 2px 5px;
   padding: 10px;
   border: solid #B1BCBD 1px;
@@ -61,7 +61,7 @@ body {
   top: -4px;
 }
 .forecast-data-view-swipe ul li div.f-day-container h1 {
-  font-size: 50px;
+  font-size: 36px;
   float: right;
   margin: -5px 2px 0;
   color: #1575A2;
@@ -78,8 +78,8 @@ body {
   margin-bottom: 0;
 }
 .forecast-data-view-swipe .f-indicator {
-  width: 142px;
-  height: 10px;
+  width: 112px;
+  height: 8px;
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5;
