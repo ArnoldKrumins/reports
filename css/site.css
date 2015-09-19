@@ -12,6 +12,11 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 ); /!* IE6-8 *!/
 */
 }
+.no-date {
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
 .swiper-wrapper ul {
   margin: 0;
   padding: 0;
@@ -25,7 +30,7 @@ body {
 }
 .calendar-header ul.calendar-days li div {
   width: 150px;
-  margin: 10px;
+  margin: 2px 5px;
   padding: 10px;
   border-bottom-width: 3px;
   border-bottom-color: grey;
@@ -43,10 +48,10 @@ body {
   position: relative;
   width: 150px;
   height: 80px;
-  margin: 10px;
+  margin: 2px 5px;
   padding: 10px;
-  border: solid #CECBCB 1px;
-  background-color: gainsboro;
+  border: solid #B1BCBD 1px;
+  background-color: #E6EAEA;
   -webkit-border-radius: 2px 2px 2px 2px;
   -moz-border-radius: 2px 2px 2px 2px;
   border-radius: 2px 2px 2px 2px;
@@ -65,19 +70,22 @@ body {
   opacity: 0.5;
 }
 .forecast-data-view-swipe ul li div.f-day-container div.f-data {
-  margin: 3px 0 6px -44px;
+  position: absolute;
+  top: 13px;
   font-size: 10px;
 }
 .forecast-data-view-swipe ul li div.f-day-container div.f-data p {
   margin-bottom: 0;
 }
 .forecast-data-view-swipe .f-indicator {
-  width: 100%;
-  margin: 0px 0 8px 0px;
-  height: 12px;
+  width: 142px;
+  height: 10px;
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5;
+  position: absolute;
+  bottom: 4px;
+  left: 3px;
 }
 .forecast-data-view-swipe .good {
   background-color: #30BF4F;

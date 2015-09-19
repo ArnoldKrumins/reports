@@ -26,16 +26,16 @@ app.directive('forecastCalendarMulti',function(){
                                     '<li ng-repeat="week in month.weeks">' +
 
                                         '<ul>' +
-                                            '<li ng-repeat="day in week">' +
-                                            '<div class="f-day-container">' +
+                                            '<li ng-repeat="day in week track by $index">' +
+                                            '<div class="f-day-container" ng-class="{\'no-date\': day === 0 }">' +
 
-                                                '<h1>{{ day.Day  }}</h1>' +
-                                                    '<div class="f-data">' +
-                                                        '<p>N/A</p>' +
-                                                        '<p>N/A</p>' +
-                                                        '<p>N/A</p>' +
+                                                '<h1 ng-hide="day=== 0">{{ day }}</h1>' +
+                                                    '<div class="f-data" ng-hide="day === 0">' +
+                                                        '<p>0</p>' +
+                                                        '<p>0</p>' +
+                                                        '<p>0</p>' +
                                                     '</div>' +
-                                                '<div class="f-indicator good"></div>' +
+                                                '<div class="f-indicator good" ng-hide="day === 0"></div>' +
                                             '</div>' +
                                         '</ul>' +
                                     '</li>' +

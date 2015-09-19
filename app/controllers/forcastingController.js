@@ -82,20 +82,18 @@ $scope.get = function(){
         })
 
         var cal = new Calendar();
+
         _.forEach($scope.forecast.range,function(range){
 
-            var cdata = cal.monthDates(range.year,range.month,function(d){
-                return {
-                    Date: d.toDateString(),
-                    Day: d.getDate(),
-                }
-            });
+            var cdata = cal.monthDays(range.year,range.month);
 
             $scope.calendar.push(
                 {
                     MonthName: monthName[range.month],
+                    Month: range.month,
                     Year: range.year,
-                    weeks: cdata
+                    weeks: cdata,
+                    fdata: _.filter($scope.forecastData,{'Month': range.month,'Year':range.year})
                 }
             );
 

@@ -76,6 +76,9 @@ body{
   text-shadow: @string;
 }
 
+.no-date{
+  .opacity;
+}
 
 .swiper-wrapper{
   ul{
@@ -94,7 +97,7 @@ body{
     li{
       div{
         width:150px;
-        margin:10px;
+        margin: 2px 5px;
         padding:10px;
         border-bottom-width: 3px;
         border-bottom-color: grey;
@@ -122,10 +125,10 @@ body{
         position: relative;
         width:150px;
         height:80px;
-        margin:10px;
+         margin: 2px 5px;
         padding:10px;
-        border: solid #CECBCB 1px;
-        background-color: gainsboro;
+         border: solid #B1BCBD 1px;
+         background-color: #E6EAEA;
         .border-radius(2px,2px,2px,2px);
 
         h5{
@@ -142,7 +145,8 @@ body{
         }
 
         div.f-data{
-          margin: 3px 0 6px -44px;
+          position: absolute;
+          top: 13px;
           font-size: 10px;
           p{
             margin-bottom: 0;
@@ -156,10 +160,12 @@ body{
 
 
   .f-indicator{
-    width: 100%;
-    margin: 0px 0 8px 0px;
-    height: 12px;
-    .opacity(0.5);
+    width: 142px;
+    height: 10px;
+   .opacity;
+    position: absolute;
+    bottom: 4px;
+    left: 3px;
   }
 
   .good{
