@@ -11,7 +11,7 @@ app.directive('forecastCalendarMulti',function(){
                         '<div ng-repeat="month in calendarData" class="swiper-slide" end-repeat>' +
 
                             '<div class="calendar-header">' +
-                                '<div><h2 style="margin-bottom: -10px;">{{ month.MonthName.toString().concat(\'&nbsp\',month.Year) }}</h2></div>' +
+                                '<div><h2 style="margin-bottom: -5px;">{{ month.MonthName.toString().concat(\'&nbsp\',month.Year) }}</h2></div>' +
                                 '<ul class="calendar-days">' +
                                     '<li><div><span>SUN</span></div></li>' +
                                     '<li><div><span>MON</span></div></li>' +
@@ -29,7 +29,7 @@ app.directive('forecastCalendarMulti',function(){
                                             '<li ng-repeat="day in week track by $index">' +
                                             '<div class="f-day-container" ng-class="{\'no-date\': day === 0 }">' +
 
-                                                '<h1 ng-hide="day=== 0">{{ day }}</h1>' +
+                                                '<h1 ng-hide="day === 0">{{ day }}</h1>' +
                                                     '<div class="f-data" ng-hide="day === 0">' +
                                                         '<p>0</p>' +
                                                         '<p>0</p>' +
@@ -50,6 +50,9 @@ app.directive('forecastCalendarMulti',function(){
                     '</div>' +
                  '</div>',
         link:function(scope,element,attrs){
+
+
+
 
             scope.$on('calendar-created', function() {
 
