@@ -74,6 +74,7 @@ body {
 .forecast-data-view-swipe ul li div.f-day-container div.f-data {
   position: absolute;
   top: 10px;
+  text-align: left;
   font-size: 10px;
 }
 .forecast-data-view-swipe ul li div.f-day-container div.f-data p {
@@ -86,8 +87,8 @@ body {
   -moz-opacity: 0.5;
   opacity: 0.5;
   position: absolute;
-  bottom: 4px;
-  left: 3px;
+  bottom: -12px;
+  left: -7px;
 }
 .forecast-data-view-swipe .good {
   background-color: #30BF4F;

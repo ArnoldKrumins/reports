@@ -17,6 +17,12 @@ $scope.forecast = {
 
 }
 
+$scope.fvm = {
+    avails:0,
+    sold:0,
+    revenue:0
+}
+
 
 $scope.months = function(sDate,eDate){
 
@@ -72,10 +78,10 @@ $scope.get = function(){
     $timeout(function(){
         var data = forecastingDataService.get();
         $scope.forecastData = _.forEach(data.Datas,function(fd){
-            var d = new Date(fd.group);
+            var d = new Date(fd.group.substr(0,10));
             _.assign(fd, { 'Date': d.toDateString() });
             _.assign(fd, { 'Day': d.getDate() });
-            _.assign(fd, { 'Month': d.getMonth() });
+            _.assign(fd, { 'Month': d.getMonth()+1 });
             _.assign(fd, { 'Year': d.getFullYear() });
             _.assign(fd, { 'MonthName': monthName[d.getMonth()] });
 
@@ -89,7 +95,7 @@ $scope.get = function(){
 
             $scope.calendar.push(
                 {
-                    MonthName: monthName[range.month],
+                    MonthName: monthName[range.month-1],
                     Month: range.month,
                     Year: range.year,
                     weeks: cdata,

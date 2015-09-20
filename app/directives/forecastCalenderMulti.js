@@ -3,15 +3,18 @@
  */
 app.directive('forecastCalendarMulti',function(){
 
+
+
+
     return{
         restrict:'EA',
-        scope:{ calendarData:'=forecastCalendarMulti' },
+        scope:{ calendarData:'=forecastCalendarMulti', viewModel:'=' },
         template:'<div class="swiper-container col-sm-6 col-md-6 col-lg-6">' +
                     '<div class="swiper-wrapper" style="margin-bottom: 30px;">' +
                         '<div ng-repeat="month in calendarData" class="swiper-slide" end-repeat>' +
 
                             '<div class="calendar-header">' +
-                                '<div><h2 style="margin-bottom: -5px;">{{ month.MonthName.toString().concat(\'&nbsp\',month.Year) }}</h2></div>' +
+                                '<div><h3 style="margin-bottom: -5px;">{{ month.MonthName.toString().concat(\'&nbsp\',month.Year) }}</h3></div>' +
                                 '<ul class="calendar-days">' +
                                     '<li><div><span>SUN</span></div></li>' +
                                     '<li><div><span>MON</span></div></li>' +
@@ -30,12 +33,7 @@ app.directive('forecastCalendarMulti',function(){
                                             '<div class="f-day-container" ng-class="{\'no-date\': day === 0 }">' +
 
                                                 '<h1 ng-hide="day === 0">{{ day }}</h1>' +
-                                                    '<div class="f-data" ng-hide="day === 0">' +
-                                                        '<p>0</p>' +
-                                                        '<p>0</p>' +
-                                                        '<p>0</p>' +
-                                                    '</div>' +
-                                                '<div class="f-indicator good" ng-hide="day === 0"></div>' +
+                                                    '<div forecast-panel day="day" fvm="viewModel" data-avails="{{ viewModel.avails }}" data-sold="{{ viewModel.sold }}" data-revenue="{{ viewModel.revenue }}" ng-init="init(month.fdata,day)" />' +
                                             '</div>' +
                                         '</ul>' +
                                     '</li>' +
@@ -52,6 +50,21 @@ app.directive('forecastCalendarMulti',function(){
         link:function(scope,element,attrs){
 
 
+            scope.init = function(fdata,day){
+                if(day > 0){
+                    var data = _.filter(fdata,{'Day': day})
+                    if(data.length > 0){
+                        scope.viewModel.avails = data[0].avails;
+                        scope.viewModel.sold = data[0].sold;
+                        scope.viewModel.revenue = data[0].revenue;
+                    }
+                    else{
+                        scope.viewModel.avails = 0;
+                        scope.viewModel.sold = 0;
+                        scope.viewModel.revenue = 0;
+                    }
+                }
+            }
 
 
             scope.$on('calendar-created', function() {
