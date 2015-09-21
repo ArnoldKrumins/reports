@@ -65,7 +65,7 @@ body {
 .forecast-data-view-swipe ul li div.f-day-container h1 {
   font-size: 25px;
   float: right;
-  margin: -8px -4px 0;
+  margin: -12px -8px 0;
   color: #1575A2;
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
@@ -73,9 +73,10 @@ body {
 }
 .forecast-data-view-swipe ul li div.f-day-container div.f-data {
   position: absolute;
-  top: 10px;
+  top: 4px;
+  left: 5px;
   text-align: left;
-  font-size: 10px;
+  font-size: 9px;
 }
 .forecast-data-view-swipe ul li div.f-day-container div.f-data p {
   margin: -3px 0 0px;
@@ -87,8 +88,8 @@ body {
   -moz-opacity: 0.5;
   opacity: 0.5;
   position: absolute;
-  bottom: -12px;
-  left: -7px;
+  bottom: -15px;
+  left: -2px;
 }
 .forecast-data-view-swipe .good {
   background-color: #30BF4F;
