@@ -91,7 +91,7 @@ $scope.get = function(){
 
         _.forEach($scope.forecast.range,function(range){
 
-            var cdata = cal.monthDays(range.year,range.month);
+            var cdata = cal.monthDays(range.year,range.month-1);
 
             $scope.calendar.push(
                 {
