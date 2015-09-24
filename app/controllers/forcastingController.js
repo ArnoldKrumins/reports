@@ -8,11 +8,11 @@ $scope.forecastDataGrouped = {};
 $scope.calendar = [];
 
 $scope.forecast = {
-    sDate: "2015-05-04 00:00:00",
-    eDate: "2015-06-15 00:00:00",
+    sDate: "2015-09-08",
+    eDate: "2015-11-26",
     range:[
-        {year:2015, month:5},
-        {year:2015, month:6}
+        {year:2015, month:9},
+        {year:2015, month:10}
     ]
 
 }
@@ -75,36 +75,56 @@ $scope.months = function(sDate,eDate){
 
 $scope.get = function(){
 
+
+
+
+
+
     $timeout(function(){
-        var data = forecastingDataService.get();
-        $scope.forecastData = _.forEach(data.Datas,function(fd){
-            var d = new Date(fd.group.substr(0,10));
-            _.assign(fd, { 'Date': d.toDateString() });
-            _.assign(fd, { 'Day': d.getDate() });
-            _.assign(fd, { 'Month': d.getMonth()+1 });
-            _.assign(fd, { 'Year': d.getFullYear() });
-            _.assign(fd, { 'MonthName': monthName[d.getMonth()] });
+        var data = forecastingDataService.get('01/09/2015','30/10/2015').then(function (data) {
+            if (true) {
 
-        })
+                $scope.forecastData = _.forEach(data.Datas,function(fd){
+                    var d = new Date(fd.group.substr(0,10));
+                    _.assign(fd, { 'Date': d.toDateString() });
+                    _.assign(fd, { 'Day': d.getDate() });
+                    _.assign(fd, { 'Month': d.getMonth()+1 });
+                    _.assign(fd, { 'Year': d.getFullYear() });
+                    _.assign(fd, { 'MonthName': monthName[d.getMonth()] });
 
-        var cal = new Calendar();
+                });
 
-        _.forEach($scope.forecast.range,function(range){
 
-            var cdata = cal.monthDays(range.year,range.month-1);
+                var cal = new Calendar();
 
-            $scope.calendar.push(
-                {
-                    MonthName: monthName[range.month-1],
-                    Month: range.month,
-                    Year: range.year,
-                    weeks: cdata,
-                    fdata: _.filter($scope.forecastData,{'Month': range.month,'Year':range.year})
-                }
-            );
+                _.forEach($scope.forecast.range,function(range){
 
+                    var cdata = cal.monthDays(range.year,range.month-1);
+
+                    $scope.calendar.push(
+                        {
+                            MonthName: monthName[range.month-1],
+                            Month: range.month,
+                            Year: range.year,
+                            weeks: cdata,
+                            fdata: _.filter($scope.forecastData,{'Month': range.month,'Year':range.year})
+                        }
+                    );
+
+
+                });
+
+
+            }
+            else {
+                notificationService.error('RTB Settings', 'There has been a problem saving!');
+            }
+
+            //$scope.busy = false;
 
         });
+
+
 
 
 
