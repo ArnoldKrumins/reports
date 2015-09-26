@@ -72,6 +72,8 @@ $scope.runForcast = function(){
         var data = forecastingDataService.get('01/09/2015','30/10/2015').then(function (data) {
             if (true) { // data.success
 
+                $scope.forecast.range.length = 0;
+
                 $scope.forecastData = _.forEach(data.Datas,function(fd){
                     var d = new Date(fd.group.substr(0,10));
                     _.assign(fd, { 'Date': d.toDateString() });
