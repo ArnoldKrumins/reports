@@ -9,8 +9,8 @@ app.directive('forecastPanel',function(){
         template:'<div class="f-data" ng-hide="day === 0 || avails == 0">' +
                     '<table>' +
                          '<tbody>' +
-                            '<tr><th>Avail:&nbsp;</th><td>{{ formatNumber(avails).toString() }}</td></tr>' +
-                            '<tr><th>Sold:&nbsp;</th><td>{{ formatNumber(sold).toString() }}</td></tr>' +
+                            '<tr><th>Avail:&nbsp;</th><td>{{ formatNumber(avails).toString() | number }}</td></tr>' +
+                            '<tr><th>Sold:&nbsp;</th><td>{{ formatNumber(sold).toString() | number }}</td></tr>' +
                             '<tr><th>Rev:&nbsp;</th><td><strong>{{ revenue | currency }}&nbsp;{{ \'(\'.concat(status(avails,sold),\'%\',\')\') }}</strong></td></tr>' +
                          '</tbody>' +
                     '</table>' +

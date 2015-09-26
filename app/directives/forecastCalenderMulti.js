@@ -8,7 +8,7 @@ app.directive('forecastCalendarMulti',function(){
 
     return{
         restrict:'EA',
-        scope:{ calendarData:'=forecastCalendarMulti', viewModel:'=' },
+        scope:{ calendarData:'=forecastCalendarMulti', viewModel:'=', busy:'=' },
         template:'<div class="swiper-container col-sm-6 col-md-6 col-lg-6">' +
                     '<div class="swiper-wrapper" style="margin-bottom: 30px;">' +
                         '<div ng-repeat="month in calendarData" class="swiper-slide" end-repeat>' +
@@ -43,8 +43,8 @@ app.directive('forecastCalendarMulti',function(){
 
                     '</div>' +
                      '<div class="swiper-pagination"></div>' +
-                        '<div class="swiper-button-next"></div>' +
-                        '<div class="swiper-button-prev"></div>' +
+                        '<div ng-hide="busy" class="swiper-button-next"></div>' +
+                        '<div ng-hide="busy" class="swiper-button-prev"></div>' +
                     '</div>' +
                  '</div>',
         link:function(scope,element,attrs){

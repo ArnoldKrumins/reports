@@ -6,17 +6,22 @@ app.controller('ForecastController',['$scope','$timeout','forecastingDataService
 $scope.forecastData =[];
 $scope.forecastDataGrouped = {};
 $scope.calendar = [];
+$scope.busy = false;
 
+
+/* Forecast Parameter object */
 $scope.forecast = {
-    sDate: "2015-09-08",
-    eDate: "2015-11-26",
-    range:[
-        {year:2015, month:9},
-        {year:2015, month:10}
-    ]
+    sDate: new Date(),
+    eDate: new Date(),
+    range:[],
+    dailyBudget:0,
+    budget:0,
+    cpcBid:0,
+    cpmBid:0,
 
 }
 
+/* View model for holding the forecast data for each day. */
 $scope.fvm = {
     avails:0,
     sold:0,
@@ -24,18 +29,6 @@ $scope.fvm = {
 }
 
 
-$scope.months = function(sDate,eDate){
-
-    var d1 = new Date(sDate);
-    var d2 = new Date(eDate);
-    var y1=d1.getFullYear();
-    var y2=d2.getFullYear();
-    var m1=d1.getMonth();
-    var m2=d2.getMonth();
-
-    return (y2 - y1) * 12 + (m2 - m1) + 1;
-
-}
 
 
     var weekday = new Array(7);
@@ -66,23 +59,18 @@ $scope.months = function(sDate,eDate){
 
     $scope.init = function(){
 
-    $scope.get();
-    var monthsCount = $scope.months($scope.forecast.sDate,$scope.forecast.eDate);
-
+    $scope.runForcast();
 
 }
 
 
-$scope.get = function(){
-
-
-
-
+$scope.runForcast = function(){
 
 
     $timeout(function(){
+        $scope.busy = true;
         var data = forecastingDataService.get('01/09/2015','30/10/2015').then(function (data) {
-            if (true) {
+            if (true) { // data.success
 
                 $scope.forecastData = _.forEach(data.Datas,function(fd){
                     var d = new Date(fd.group.substr(0,10));
@@ -91,6 +79,9 @@ $scope.get = function(){
                     _.assign(fd, { 'Month': d.getMonth()+1 });
                     _.assign(fd, { 'Year': d.getFullYear() });
                     _.assign(fd, { 'MonthName': monthName[d.getMonth()] });
+                    if(_.filter($scope.forecast.range,{'month':fd.Month,'year': fd.Year}).length === 0){
+                        $scope.forecast.range.push({month: fd.Month,year:fd.Year})
+                    }
 
                 });
 
@@ -117,10 +108,11 @@ $scope.get = function(){
 
             }
             else {
-                notificationService.error('RTB Settings', 'There has been a problem saving!');
+                $scope.busy = false;
+                notificationService.error('Forecasting Service', 'There has been a problem getting data.');
             }
 
-            //$scope.busy = false;
+            $scope.busy = false;
 
         });
 

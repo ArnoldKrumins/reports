@@ -76,7 +76,7 @@ body {
   top: 4px;
   left: 5px;
   text-align: left;
-  font-size: 9px;
+  font-size: 10px;
 }
 .forecast-data-view-swipe ul li div.f-day-container div.f-data p {
   margin: -3px 0 0px;
@@ -88,7 +88,7 @@ body {
   -moz-opacity: 0.5;
   opacity: 0.5;
   position: absolute;
-  bottom: -15px;
+  bottom: -10px;
   left: -2px;
 }
 .forecast-data-view-swipe .good {
@@ -99,6 +99,15 @@ body {
 }
 .forecast-data-view-swipe .bad {
   background-color: #ff647a;
+}
+.f-panel {
+  border: #D4CECE solid 1px;
+  min-height: 600px;
+  margin: 10px;
+  background-color: #EFEFEF;
+  -webkit-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
 }
 .forecast-data-view ul li {
   display: inline-block;

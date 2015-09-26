@@ -46,11 +46,63 @@
 </head>
 <body  ng-app="reports">
 
-<div  ng-controller="ForecastController" ng-init="init()" class="container-fluid">
+<div ng-controller="ForecastController" ng-init="init()" class="container-fluid">
 
-    <div class="row">
-        <div class="forecast-data-view-swipe col-sm-12 col-md-12 col-lg-12">
-            <div forecast-calendar-multi="calendar" view-model="fvm" ng-init=""/>
+    <div class="row-fluid" >
+        <div class="col-sm-3 col-md-2 col-lg-2">
+
+            <div class="f-panel row">
+
+                <div style="margin: 20px;">
+
+                    <h4><i class="fa fa-cogs"></i>&nbsp;Forecast Parameters</h4>
+
+                  <div class="form-group">
+                      <label for="dailyBudget">Date From</label>
+                     <p class="input-group">
+                          <input type="date" class="form-control" datepicker-popup="" ng-model="forecast.sDate" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
+                          <span class="input-group-btn">
+                          <button type="button" class="btn btn-default ng-click-active" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                     </p>
+                  </div>
+
+                    <div class="form-group">
+                        <label for="dailyBudget">Date To</label>
+                        <p class="input-group">
+                            <input type="date" class="form-control" datepicker-popup="" ng-model="forecast.eDate" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
+                          <span class="input-group-btn">
+                          <button type="button" class="btn btn-default ng-click-active" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dailyBudget">Daily Budget</label>
+                        <input type="number" ng-model="forecast.dailyBudget" class="form-control" id="dailyBudget" placeholder="Daily Budget">
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Budget</label>
+                        <input type="number" ng-model="forecast.budget" class="form-control" id="budget" placeholder="Budget">
+                    </div>
+                    <div class="form-group">
+                        <label for="cpcBid">CPC Bid</label>
+                        <input type="number" ng-model="forecast.cpcBid" class="form-control" id="cpcBid" placeholder="CPC Bid">
+                    </div>
+                    <div class="form-group">
+                        <label for="cpmBid">CPM Bid</label>
+                        <input type="number" ng-model="forecast.cpmBid" class="form-control" id="cpmBid" placeholder="CPM Bid">
+                    </div>
+                    <button type="button" ng-click="runForcast()" class="btn btn-info">Forecast</button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="forecast-data-view-swipe col-sm-9 col-md-10 col-lg-10" spinner="busy" style="min-height: 500px;">
+            <div forecast-calendar-multi="calendar" view-model="fvm" ng-init="" busy="busy" />
         </div>
     </div>
 
@@ -69,6 +121,7 @@
 <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
 <script src="bower_components/Swiper/dist/js/swiper.min.js"></script>
 <script src="js/calendar.js"></script>
+<script src="js/spin.js"></script>
 
 <script src="app/reports.js"></script>
 <script src="app/services/forcastingDataService.js"></script>
@@ -76,6 +129,7 @@
 <script src="app/directives/endRepeat.js"></script>
 <script src="app/directives/forecastPanel.js"></script>
 <script src="app/directives/forecastCalenderMulti.js"></script>
+<script src="app/directives/spinner.js"></script>
 
 
 
