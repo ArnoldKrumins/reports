@@ -602,7 +602,7 @@ body {
 }
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .calendar-header ul.calendar-days li div {
     width: 120px;
     margin: 2px 5px;
@@ -633,7 +633,7 @@ body {
   }
 }
 /* Large devices (large desktops, 1200px and up) */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 2000px) {
   .calendar-header {
     width: 100%;
   }
