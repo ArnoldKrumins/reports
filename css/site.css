@@ -600,3 +600,92 @@ body {
   color: lightgrey;
   text-decoration: line-through;
 }
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  .calendar-header ul.calendar-days li div {
+    width: 120px;
+    margin: 2px 5px;
+    padding: 10px;
+  }
+  .forecast-data-view-swipe ul li div.f-day-container {
+    width: 120px;
+    height: 60px;
+    margin: 2px 5px;
+    padding: 10px;
+  }
+  .forecast-data-view-swipe ul li div.f-day-container h1 {
+    font-size: 25px;
+  }
+  .forecast-data-view-swipe ul li div.f-day-container div.f-data {
+    top: 4px;
+    left: 5px;
+    font-size: 10px;
+  }
+  .forecast-data-view-swipe ul li div.f-day-container div.f-data p {
+    margin: -3px 0 0px;
+  }
+  .f-indicator {
+    width: 112px;
+    height: 8px;
+    bottom: -10px;
+    left: -2px;
+  }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  .calendar-header {
+    width: 100%;
+  }
+  .calendar-header ul.calendar-days li div {
+    width: 200px;
+    margin: 5px 10px;
+    padding: 10px;
+  }
+  .f-indicator {
+    width: 100%;
+    margin: 12px 0px;
+    height: 15px;
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+  }
+  .forecast-data-view-swipe ul li div.f-day-container {
+    width: 200px;
+    height: 90px;
+    margin: 5px 10px;
+    padding: 16px;
+  }
+  .forecast-data-view-swipe ul li div.f-day-container h5 {
+    position: absolute;
+    top: -4px;
+  }
+  .forecast-data-view-swipe ul li div.f-day-container h1 {
+    font-size: 30px;
+    float: right;
+    margin: -12px -8px 0;
+    color: #1575A2;
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+  }
+  .forecast-data-view-swipe ul li div.f-day-container div.f-data {
+    top: 15px;
+    left: 8px;
+    text-align: left;
+    font-size: 12px;
+  }
+  .forecast-data-view-swipe ul li div.f-day-container div.f-data p {
+    margin: -3px 0 0px;
+  }
+  .forecast-data-view-swipe ul li div.f-day-container .f-indicator {
+    width: 186px;
+    height: 10px;
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    position: absolute;
+    bottom: -28px;
+    left: -2px;
+  }
+}

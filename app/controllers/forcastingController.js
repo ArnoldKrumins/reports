@@ -10,7 +10,7 @@ $scope.busy = false;
 
 
 /* Forecast Parameter object */
-$scope.forecast = {
+$scope.forecastParams = {
     sDate: new Date(),
     eDate: new Date(),
     range:[],
@@ -27,9 +27,6 @@ $scope.fvm = {
     sold:0,
     revenue:0
 }
-
-
-
 
     var weekday = new Array(7);
     weekday[0]=  "Sunday";
@@ -69,10 +66,11 @@ $scope.runForcast = function(){
 
     $timeout(function(){
         $scope.busy = true;
-        var data = forecastingDataService.get('01/09/2015','30/10/2015').then(function (data) {
+        $scope.forecastData.length = 0;
+        var data = forecastingDataService.get($scope.forecastParams).then(function (data) {
             if (true) { // data.success
 
-                $scope.forecast.range.length = 0;
+                $scope.forecastParams.range.length = 0;
 
                 $scope.forecastData = _.forEach(data.Datas,function(fd){
                     var d = new Date(fd.group.substr(0,10));
@@ -81,8 +79,8 @@ $scope.runForcast = function(){
                     _.assign(fd, { 'Month': d.getMonth()+1 });
                     _.assign(fd, { 'Year': d.getFullYear() });
                     _.assign(fd, { 'MonthName': monthName[d.getMonth()] });
-                    if(_.filter($scope.forecast.range,{'month':fd.Month,'year': fd.Year}).length === 0){
-                        $scope.forecast.range.push({month: fd.Month,year:fd.Year})
+                    if(_.filter($scope.forecastParams.range,{'month':fd.Month,'year': fd.Year}).length === 0){
+                        $scope.forecastParams.range.push({month: fd.Month,year:fd.Year})
                     }
 
                 });
@@ -90,7 +88,7 @@ $scope.runForcast = function(){
 
                 var cal = new Calendar();
 
-                _.forEach($scope.forecast.range,function(range){
+                _.forEach($scope.forecastParams.range,function(range){
 
                     var cdata = cal.monthDays(range.year,range.month-1);
 

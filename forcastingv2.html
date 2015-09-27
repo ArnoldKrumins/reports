@@ -60,7 +60,7 @@
                   <div class="form-group">
                       <label for="dailyBudget">Date From</label>
                      <p class="input-group">
-                          <input type="date" class="form-control" datepicker-popup="" ng-model="forecast.sDate" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
+                          <input type="date" class="form-control" datepicker-popup="" ng-model="forecastParams.sDate" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
                           <span class="input-group-btn">
                           <button type="button" class="btn btn-default ng-click-active" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                             </span>
@@ -70,7 +70,7 @@
                     <div class="form-group">
                         <label for="dailyBudget">Date To</label>
                         <p class="input-group">
-                            <input type="date" class="form-control" datepicker-popup="" ng-model="forecast.eDate" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
+                            <input type="date" class="form-control" datepicker-popup="" ng-model="forecastParams.eDate" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="required" style=""><!-- ngIf: isOpen -->
                           <span class="input-group-btn">
                           <button type="button" class="btn btn-default ng-click-active" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                             </span>
@@ -79,19 +79,19 @@
 
                     <div class="form-group">
                         <label for="dailyBudget">Daily Budget</label>
-                        <input type="number" ng-model="forecast.dailyBudget" class="form-control" id="dailyBudget" placeholder="Daily Budget">
+                        <input type="number" ng-model="forecastParams.dailyBudget" class="form-control" id="dailyBudget" placeholder="Daily Budget">
                     </div>
                     <div class="form-group">
                         <label for="budget">Budget</label>
-                        <input type="number" ng-model="forecast.budget" class="form-control" id="budget" placeholder="Budget">
+                        <input type="number" ng-model="forecastParams.budget" class="form-control" id="budget" placeholder="Budget">
                     </div>
                     <div class="form-group">
                         <label for="cpcBid">CPC Bid</label>
-                        <input type="number" ng-model="forecast.cpcBid" class="form-control" id="cpcBid" placeholder="CPC Bid">
+                        <input type="number" ng-model="forecastParams.cpcBid" class="form-control" id="cpcBid" placeholder="CPC Bid">
                     </div>
                     <div class="form-group">
                         <label for="cpmBid">CPM Bid</label>
-                        <input type="number" ng-model="forecast.cpmBid" class="form-control" id="cpmBid" placeholder="CPM Bid">
+                        <input type="number" ng-model="forecastParams.cpmBid" class="form-control" id="cpmBid" placeholder="CPM Bid">
                     </div>
                     <button type="button" ng-click="runForcast()" class="btn btn-info">Forecast</button>
 
