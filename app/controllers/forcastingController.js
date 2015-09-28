@@ -71,6 +71,8 @@ $scope.runForcast = function(){
             if (true) { // data.success
 
                 $scope.forecastParams.range.length = 0;
+                $scope.forecastData.length = 0;
+                $scope.calendar.length = 0;
 
                 $scope.forecastData = _.forEach(data.Datas,function(fd){
                     var d = new Date(fd.group.substr(0,10));

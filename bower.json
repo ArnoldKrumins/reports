@@ -29,6 +29,7 @@
     "gsap": "~1.16.1",
     "jquery": "~2.1.4",
     "lodash": "~3.8.0",
-    "Swiper": "idangerous-swiper#~3.1.2"
+    "Swiper": "idangerous-swiper#~3.1.2",
+    "moment": "~2.10.6"
   }
 }
