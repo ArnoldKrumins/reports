@@ -102,7 +102,11 @@
 
         </div>
         <div class="forecast-data-view-swipe col-sm-9 col-md-9 col-lg-9" spinner="busy" style="min-height: 500px;">
-            <div forecast-calendar-multi="calendar" view-model="fvm" ng-init="" busy="busy" />
+
+          <div forecast-calendar-multi="calendar" view-model="fvm" ng-init="" busy="busy" />
+
+
+
         </div>
     </div>
 
@@ -121,6 +125,12 @@
 <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
 <script src="bower_components/moment/min/moment.min.js"></script>
 <script src="bower_components/Swiper/dist/js/swiper.min.js"></script>
+
+
+<script src="bower_components/amcharts3/amcharts/amcharts.js"></script>
+<script src="bower_components/amcharts3/amcharts/serial.js"></script>
+<script src="bower_components/amcharts3/amcharts/themes/light.js"></script>
+
 <script src="js/calendar.js"></script>
 <script src="js/spin.js"></script>
 
@@ -131,7 +141,7 @@
 <script src="app/directives/forecastPanel.js"></script>
 <script src="app/directives/forecastCalenderMulti.js"></script>
 <script src="app/directives/spinner.js"></script>
-
+<script src="app/directives/areaChart.js"></script>
 
 
 </html>

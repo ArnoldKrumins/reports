@@ -39,9 +39,17 @@ app.directive('forecastCalendarMulti',function(){
                                     '</li>' +
                                 '</ul>' +
                             '</div>' +
+
+                            '<div style="width=100%;">' +
+                                '<div area-chart month="month" month-text="month.MonthName"/>' +
+                            '</div>' +
+
                         '</div>' +
 
+                     //'<div area-chart chart-data="calendarData.month[0].chartdata" month-text="Hello Mum!"/>' +
+
                     '</div>' +
+
                      '<div class="swiper-pagination"></div>' +
                         '<div ng-hide="busy" class="swiper-button-next"></div>' +
                         '<div ng-hide="busy" class="swiper-button-prev"></div>' +

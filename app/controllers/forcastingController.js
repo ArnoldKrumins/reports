@@ -100,7 +100,11 @@ $scope.runForcast = function(){
                             Month: range.month,
                             Year: range.year,
                             weeks: cdata,
-                            fdata: _.filter($scope.forecastData,{'Month': range.month,'Year':range.year})
+                            chartid: 'chart'.concat(monthName[range.month-1]),
+                            fdata: _.filter($scope.forecastData,{'Month': range.month,'Year':range.year}),
+                            chartdata: _.map(_.filter($scope.forecastData,{'Month': range.month,'Year':range.year}),function(data){
+                                return { day:data.Day, avails:data.avails, sold:data.sold};
+                            })
                         }
                     );
 
