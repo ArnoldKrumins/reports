@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="bower_components/Swiper/dist/css/swiper.min.css"/>
     <title>Programmatic Digital login</title>
 
     <style>
@@ -56,6 +57,7 @@
             height: 400px;
             width: 100%;
 
+
         }
         
         .logo{
@@ -77,6 +79,81 @@
         .btn{
             border-radius: 0;
         }
+
+        .info-container{
+            position: relative;
+            top: -60px;
+            left:250px;
+        }
+
+        .info-icon,
+        .dashboard-icon,
+        .optim-icon{
+            position: relative;
+            top: 30px;
+            height: 86px;
+            width:87px;
+        }
+
+        .info-icon{
+            background:url(images/icon-reports.png) transparent no-repeat;
+        }
+
+        .dashboard-icon{
+            background:url(images/icon-dashboard.png) transparent no-repeat;
+        }
+
+        .optim-icon{
+            background:url(images/icons-optimisation.png) transparent no-repeat;
+        }
+
+        .info-text{
+            text-align: left;
+            margin-top: -8px;
+            color: rgb(68, 68, 68);
+
+        }
+
+        .info-text h2{
+            font-style: italic;
+        }
+
+        .info-text h4,
+        .info-text h5{
+            font-style: italic;
+            margin-top: -10px;
+        }
+
+        .info-text h5{
+            margin-top: -8px;
+        }
+
+        .swiper-container {
+            position: absolute;
+            top: 11px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+
+        }
+        .swiper-slide {
+            text-align: center;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
 
     </style>
 
@@ -112,15 +189,51 @@
 
                     <div class="l-image">
                         <div class="r-image">
-
-
-
-
                         </div>
-
-
-
                     </div>
+
+
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="info-container col-sm-12 col-md-12 col-lg-6">
+                                    <div class="info-icon col-sm-6 col-md-6 col-lg-6"></div>
+                                    <div class="info-text col-sm-6 col-md-6 col-lg-6">
+                                        <h2><strong>Reporting</strong></h2>
+                                        <h4>Per site, page, advertiser and DSP.</h4>
+                                        <h5>Lorem ipsum dolor sit amet, saperet volutpat percipitur vis ex, aperiri feugiat constituam eam ad, no mel veniam epicuri oporteat. In mei ubique appetere, duo no omnium aperiam nusquam. Dictas expetenda vulputate ex has. Mea eu labores vivendo assueverit, no tollit consul perpetua mel.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="info-container col-sm-12 col-md-12 col-lg-6">
+                                    <div class="dashboard-icon col-sm-6 col-md-6 col-lg-6"></div>
+                                    <div class="info-text col-sm-6 col-md-6 col-lg-6">
+                                        <h2><strong>Dashboard</strong></h2>
+                                        <h4>Tailor for your needs with moveable widgets and time frames.</h4>
+                                        <h5>Lorem ipsum dolor sit amet, saperet volutpat percipitur vis ex, aperiri feugiat constituam eam ad, no mel veniam epicuri oporteat. In mei ubique appetere, duo no omnium aperiam nusquam. Dictas expetenda vulputate ex has. Mea eu labores vivendo assueverit, no tollit consul perpetua mel.</h5>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="info-container col-sm-12 col-md-12 col-lg-6">
+                                    <div class="optim-icon col-sm-6 col-md-6 col-lg-6"></div>
+                                    <div class="info-text col-sm-6 col-md-6 col-lg-6">
+                                        <h2><strong>Optimisation</strong></h2>
+                                        <h4>Use the inventory as efficiently as possible.</h4>
+                                        <h5>Lorem ipsum dolor sit amet, saperet volutpat percipitur vis ex, aperiri feugiat constituam eam ad, no mel veniam epicuri oporteat. In mei ubique appetere, duo no omnium aperiam nusquam. Dictas expetenda vulputate ex has. Mea eu labores vivendo assueverit, no tollit consul perpetua mel.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+
 
 
 
@@ -134,4 +247,21 @@
 
 
 </body>
+
+<script src="bower_components/Swiper/dist/js/swiper.min.js"></script>
+
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 5000,
+        autoplayDisableOnInteraction: false
+    });
+</script>
+
 </html>
