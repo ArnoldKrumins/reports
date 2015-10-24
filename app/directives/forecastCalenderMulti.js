@@ -40,10 +40,6 @@ app.directive('forecastCalendarMulti',function(){
                                 '</ul>' +
                             '</div>' +
 
-                            '<div style="width=100%;">' +
-                                '<div area-chart month="month" month-text="month.MonthName"/>' +
-                            '</div>' +
-
                         '</div>' +
 
                      //'<div area-chart chart-data="calendarData.month[0].chartdata" month-text="Hello Mum!"/>' +
