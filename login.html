@@ -82,15 +82,30 @@
 
         .info-container{
             position: relative;
-            top: -60px;
-            left:250px;
+
         }
 
-        .info-icon,
-        .dashboard-icon,
-        .optim-icon{
+        .info-container ul{
+            list-style: none;
             position: relative;
-            top: 30px;
+
+        }
+
+        .info-container li{
+            display: inline-block;
+
+        }
+
+        .info-container li> div{
+            margin: 30px;
+        }
+
+        .info-item{
+            width:650px;
+        }
+
+        .slider-icon {
+            position: relative;
             height: 86px;
             width:87px;
         }
@@ -107,25 +122,46 @@
             background:url(images/icons-optimisation.png) transparent no-repeat;
         }
 
+        .rtb-icon{
+            background:url(images/icon-rtb.png) transparent no-repeat;
+        }
+
+        .yield-icon{
+            background:url(images/icon-yeild.png) transparent no-repeat;
+        }
+
+        .icon-deals{
+            background:url(images/icon-deals.png) transparent no-repeat;
+        }
+
+        .icon-campaigns {
+            background: url(images/icon-campaigns.png) transparent no-repeat;
+        }
+
+        .icon-auctions{
+            background:url(images/icon-auctions.png) transparent no-repeat;
+        }
+
+
         .info-text{
             text-align: left;
-            margin-top: -8px;
+
             color: rgb(68, 68, 68);
+            position: absolute;
+            top: 0;
+            left: 115px;
+        }
+
+
+
+
+        .info-text h3{
+            position: relative;
+            margin: 10px 0 -10px;
 
         }
 
-        .info-text h2{
-            font-style: italic;
-        }
-
-        .info-text h4,
-        .info-text h5{
-            font-style: italic;
-            margin-top: -10px;
-        }
-
-        .info-text h5{
-            margin-top: -8px;
+        .info-text h4{
         }
 
         .swiper-container {
@@ -196,36 +232,121 @@
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="info-container col-sm-12 col-md-12 col-lg-6">
-                                    <div class="info-icon col-sm-6 col-md-6 col-lg-6"></div>
-                                    <div class="info-text col-sm-6 col-md-6 col-lg-6">
-                                        <h2><strong>Reporting</strong></h2>
-                                        <h4>Per site, page, advertiser and DSP.</h4>
-                                        <h5>Lorem ipsum dolor sit amet, saperet volutpat percipitur vis ex, aperiri feugiat constituam eam ad, no mel veniam epicuri oporteat. In mei ubique appetere, duo no omnium aperiam nusquam. Dictas expetenda vulputate ex has. Mea eu labores vivendo assueverit, no tollit consul perpetua mel.</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="info-container col-sm-12 col-md-12 col-lg-6">
-                                    <div class="dashboard-icon col-sm-6 col-md-6 col-lg-6"></div>
-                                    <div class="info-text col-sm-6 col-md-6 col-lg-6">
-                                        <h2><strong>Dashboard</strong></h2>
-                                        <h4>Tailor for your needs with moveable widgets and time frames.</h4>
-                                        <h5>Lorem ipsum dolor sit amet, saperet volutpat percipitur vis ex, aperiri feugiat constituam eam ad, no mel veniam epicuri oporteat. In mei ubique appetere, duo no omnium aperiam nusquam. Dictas expetenda vulputate ex has. Mea eu labores vivendo assueverit, no tollit consul perpetua mel.</h5>
-                                    </div>
+
+                                <div class="info-container col-sm-12 col-md-12 col-lg-12">
+
+                                    <ul>
+                                        <li>
+                                            <div class="info-item col-sm-6 col-md-6 col-lg-6">
+                                                <div class="info-icon slider-icon"></div>
+                                                <div class="info-text">
+                                                    <h3><strong>Reporting</strong></h3>
+                                                    <h4>Per site, page, advertiser and DSP.</h4>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="info-item col-sm-6 col-md-6 col-lg-6">
+                                                <div class="dashboard-icon slider-icon"></div>
+                                                <div class="info-text">
+                                                    <h3><strong>Dashboard</strong></h3>
+                                                    <h4>Tailor for your needs with moveable widgets and time frames.</h4>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="info-item col-sm-6 col-md-6 col-lg-6">
+                                                <div class="optim-icon slider-icon"></div>
+                                                <div class="info-text">
+                                                    <h3><strong>Optimisation</strong></h3>
+                                                    <h4>Use the inventory as efficiently as possible.</h4>
+                                                </div>
+
+                                            </div>
+
+                                        </li>
+                                        <li>
+
+                                            <div class="info-item col-sm-6 col-md-6 col-lg-6">
+                                                <div class="rtb-icon slider-icon"></div>
+                                                <div class="info-text">
+                                                    <h3><strong>OpenRTB</strong></h3>
+                                                    <h4>Reach all demand sources through one platform and optimize ROI per impression.</h4>
+                                                </div>
+
+                                            </div>
+
+                                        </li>
+                                    </ul>
+
+
+
+
+
                                 </div>
 
                             </div>
                             <div class="swiper-slide">
-                                <div class="info-container col-sm-12 col-md-12 col-lg-6">
-                                    <div class="optim-icon col-sm-6 col-md-6 col-lg-6"></div>
-                                    <div class="info-text col-sm-6 col-md-6 col-lg-6">
-                                        <h2><strong>Optimisation</strong></h2>
-                                        <h4>Use the inventory as efficiently as possible.</h4>
-                                        <h5>Lorem ipsum dolor sit amet, saperet volutpat percipitur vis ex, aperiri feugiat constituam eam ad, no mel veniam epicuri oporteat. In mei ubique appetere, duo no omnium aperiam nusquam. Dictas expetenda vulputate ex has. Mea eu labores vivendo assueverit, no tollit consul perpetua mel.</h5>
-                                    </div>
+
+
+                                <div class="info-container col-sm-12 col-md-12 col-lg-12">
+
+                                    <ul>
+                                        <li>
+                                            <div class="info-item col-sm-6 col-md-6 col-lg-6">
+                                                <div class="yield-icon slider-icon"></div>
+                                                <div class="info-text">
+                                                    <h3><strong>Automatic Yield</strong></h3>
+                                                    <h4>Increasing the revenue for the publisher.</h4>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="info-item col-sm-6 col-md-6 col-lg-6">
+                                                <div class="icon-deals slider-icon"></div>
+                                                <div class="info-text">
+                                                    <h3><strong>Private Deals</strong></h3>
+                                                    <h4>Set up private deals with advertisers or agencies and lower order management internally.</h4>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="info-item col-sm-6 col-md-6 col-lg-6">
+                                                <div class="icon-campaigns slider-icon"></div>
+                                                <div class="info-text">
+                                                    <h3><strong>CPC/CPA Campaigns</strong></h3>
+                                                    <h4>Let direct advertisers buy through different currencies.</h4>
+                                                </div>
+
+                                            </div>
+
+                                        </li>
+                                        <li>
+
+                                            <div class="info-item col-sm-6 col-md-6 col-lg-6">
+                                                <div class="icon-auctions slider-icon"></div>
+                                                <div class="info-text">
+                                                    <h3><strong>Holistic Auctions</strong></h3>
+                                                    <h4>Optimizes each impression in real time.</h4>
+                                                </div>
+
+                                            </div>
+
+                                        </li>
+                                    </ul>
+
+
+
+
+
                                 </div>
+
                             </div>
+
                           </div>
                         <!-- Add Pagination -->
                         <div class="swiper-pagination"></div>
@@ -260,6 +381,8 @@
         spaceBetween: 30,
         centeredSlides: true,
         autoplay: 5000,
+        speed:1000,
+        loop:true,
         autoplayDisableOnInteraction: false
     });
 </script>
