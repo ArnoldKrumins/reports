@@ -30,19 +30,17 @@
 
 
         .bottom-bar{
-            position: relative;
-            left: -30px;
-            top: 12px;
+
             background-color: #0072c6;
             height:80px;
-            width: 105%;
+            width: 100%;
         }
 
 
         .l-image{
             position: relative;
-            top: 12px;
-            left: -45px;
+            top: 0;
+            left: 0;
             background:url(images/wo-login.png) transparent no-repeat;
             height: 400px;
             width:1167px;
@@ -51,15 +49,15 @@
 
         .r-image{
             position: relative;
-            top: 0px;
-            left:1167px;
+            top: 12px;
+            left:0;
             background:url(images/wo-fade.png) transparent repeat-x;
             height: 400px;
             width: 100%;
 
 
         }
-        
+
         .logo{
             position: relative;
             top: 7px;
@@ -200,9 +198,9 @@
 <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 top-bar"></div>
+                <div class="top-bar"></div>
 
-                <div class="col-sm-12 col-md-12 col-lg-12 middle-bar">
+                <div class="middle-bar">
                     <div class="logo"/>
 
 
@@ -224,12 +222,17 @@
                 </div>
 
 
-                <div class="col-sm-12 col-md-12 col-lg-12">
+                <div>
 
-                    <div class="l-image">
+                    <!--<div class="l-image">
                         <div class="r-image">
                         </div>
-                    </div>
+                    </div> -->
+
+
+                        <div class="r-image">
+                            <div class="l-image"/>
+                        </div>
 
 
                     <div class="swiper-container">
@@ -362,7 +365,7 @@
 
 
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-12 bottom-bar"></div>
+                <div class="bottom-bar"></div>
 
             </div>
 
